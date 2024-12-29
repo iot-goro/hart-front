@@ -1,6 +1,51 @@
 body {
   margin: 0;
-  background-color: aqua;
-   background: url(../images/login_bg.png) center center / cover no-repeat fixed;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/login_bg.png) center center / cover no-repeat fixed;
 }
+
+.title {
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #3c0f0a;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+button {
+  /* 上下中央に配置 */
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 中央に配置 */
+  display: flex;
+
+  /* 文字デザイン */
+  background-color: #b6bf95;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+/* ボタン内の子要素の配置 */
+button img {
+  width: 25px;
+  height: 25px;
+}
+button div {
+  display: flex;
+  align-items: center;
+  /* 文字デザイン */
+    font-family: "Nunito", serif;
+  color: #3c0f0a;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
