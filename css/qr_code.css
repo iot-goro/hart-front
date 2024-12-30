@@ -83,6 +83,7 @@ button {
   border-radius: 10px;
   /* 背景色 */
   background-color: #468c78;
+  gap: 5px;
 }
 
 button img {
