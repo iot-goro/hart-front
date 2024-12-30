@@ -1,7 +1,10 @@
 body {
   margin: 0;
   font-family: "Josefin Sans", serif;
-  background: url(../images/qr_bg.png) center center / cover no-repeat fixed;
+  background: url(../images/QR_bg.jpg);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
 }
 
 header {
