@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/qr_code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/qr_code.css" />
     <title>QRコード</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>相手とマッチする</header>
     <main>
-        <div>
-            <img src="../images/qr_temp.png" alt="QRコード" id="qr_code">
-        </div>
+      <!-- 読み取りQR画像 -->
+      <div id="qr_code_wrap">
+        <img src="../images/qr_temp.png" alt="QRコード" id="qr_code" />
+      </div>
+      <!-- 読み取るスキャン側に変更するボタン -->
+      <div id="change_btn">
+        <button>
+          <img src="../images/qr_icon.png" alt="QR読み取りアイコン" />
+          <div>QRコードを読み取る</div>
+        </button>
+      </div>
     </main>
-    
-</body>
+    <footer></footer>
+  </body>
 </html>
