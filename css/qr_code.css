@@ -3,3 +3,45 @@ body {
   font-family: "Josefin Sans", serif;
   background: url(../images/qr_bg.png) center center / cover no-repeat fixed;
 }
+header {
+    margin: 10px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #3c0f0a;
+  font-size: 24px;
+  font-weight: bold;
+}
+main {
+  /* 中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 15px;
+  padding: auto;
+ /* 枠線をつける(二重線)*/
+  border-style: double;
+  border-color: #468c78;
+  border-width: 5px;
+  border-radius: 10px;
+}
+#qr_code {
+  /* 中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 10px;
+  padding: auto;
+  /* サイズ */
+  width: 300px;
+  height: 300px;
+  /* 画像の角を丸くする */
+  border-radius: 10px;
+  /* 背景色 */
+  background-color: #468c78;
+}
