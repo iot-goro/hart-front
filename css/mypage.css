@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/mypage_bg.jpg);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
+}
+
+header {
+  margin: 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #3c0f0a;
+  font-size: 24px;
+}
+
+.bg_pattern {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -1;
+}
+.Paper {
+  background-image: linear-gradient(#468c78 2px, transparent 2px),
+    linear-gradient(90deg, #468c78 2px, transparent 2px),
+    linear-gradient(#468c78 2px, transparent 2px),
+    linear-gradient(90deg, #468c78 2px, transparent 2px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -2px -2px, -2px -2px;
+}
+
+#profile_wrap {
+  /* 中央に配置 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 40px auto;
+  /* サイズ */
+  width: 300px;
+  height: 300px;
+}
+
+#icon_wrap {
+  /* 配置 */
+  margin: 25px auto;
+  /* サイズ */
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #468c78;
+  padding: 5px;
+}
+
+#icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.name_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  color: #3c0f0a;
+  background-color: #468c78;
+  padding: 0px 15px;
+}
+.title {
+  /* 文字デザイン */
+  color: #3c0f0a;
+  font-size: 18px;
+  font-weight: bold;
+}
+#mypage_wrap {
+  /* 配置 */
+  margin: 40px auto;
+  /* サイズ */
+  width: 300px;
+  height: 300px;
+}
+.hobby_wrap {
+  /* 文字デザイン */
+  color: #3c0f0a;
+}
+.hobby_wrap div {
+  margin: 5px;
+  padding: 5px;
+}
+
+.hobby_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 20%;
+}
+.hobby_list li {
+  border-bottom: #468c78 solid 2px;
+}
+
+#recent {
+  margin: 5px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20%;
+}
+
+#recent ul li {
+  border-bottom: #468c78 solid 2px;
+}
