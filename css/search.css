@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/search_bg.jpg);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
+}
+header {
+  margin: 10px 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #3c0f0a;
+  font-size: 24px;
+}
+.title {
+  /* 文字デザイン */
+  color: #3c0f0a;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  width: fit-content;
+  padding: 2px 10px;
+  border-radius: 5px;
+  /* 背景色 */
+  background-color: aliceblue;
+}
+#search_wrap {
+  height: auto;;
+}
+#search_box_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+#search_box {
+  /* 配置 */
+  margin: 0 15px;
+}
+input {
+  /* 文字デザイン */
+  font-family: "Josefin Sans", serif;
+  color: #3c0f0a;
+  font-size: 14px;
+  font-weight: bold;
+  /* 枠線の削除 */
+  border: none;
+  /* 配置 */
+  width: 250px;
+  height: 30px;
+  /* 角を丸くする */
+  border-radius: 5px;
+  /* 背景色 */
+  background-color: #fff;
+  padding: 5px;
+}
+#or {
+  margin: 0 15px;
+}
+.search {
+  /* 文字デザイン */
+  font-family: "Josefin Sans", serif;
+  color: #3c0f0a;
+  font-size: 14px;
+  font-weight: bold;
+  /* 枠線の削除 */
+  border: none;
+  /* 配置 */
+  width: fit-content;
+  height: 30px;
+  /* 角を丸くする */
+  border-radius: 5px;
+  /* 背景色 */
+  background-color: #468c78;
+  padding: 5px 10px; /* ボタン内の余白調整 */
+}
+
+#recent_wrap{
+    margin-top: 40px;
+}

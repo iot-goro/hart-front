@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/search.css">
     <title>検索画面</title>
 </head>
 <body>
-    
+<header>トーク履歴</header>
+<main>
+    <div id="search_wrap">
+        <p class="title">相手を探す</p>
+        <div id="search_box_wrap">
+
+            <!-- 自分との関係性 -->
+            <button class="search">相手との関係</button>
+            <p id="or">または</p>
+            <div id="search_box">
+                <!-- 検索ボックス -->
+                <input type="text" placeholder="相手の名前を入力">
+                <button class="search" >検索</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- 最近話した人 -->
+    <div id="recent_wrap">
+        <p class="title">最近話した人</p>
+        <!-- 話した人リスト（ナマエ、関係、アイコン、話題） -->
+         
+        
+    </div>
+</main>
     
 </body>
 </html>
