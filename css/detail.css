@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: "Josefin Sans", serif;
+    background: url(../images/detail_bg.jpg);
+    background-repeat: no-repeat;
+    /* 背景画像のサイズ */
+    background-size: 100% 100vh;
+  }
+  header {
+    margin: 10px 20px;
+    /* 上下中央に配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 文字デザイン */
+    font-weight: bold;
+    color: #3c0f0a;
+    font-size: 24px;
+  }
