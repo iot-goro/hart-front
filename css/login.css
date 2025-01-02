@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 85vh;
+  margin-top: 20px;
   /* 文字デザイン */
   font-weight: bold;
   color: #3c0f0a;
