@@ -27,8 +27,8 @@ button {
   display: flex;
 
   /* 文字デザイン */
-  background-color: #b6bf95;
-  border: none;
+  /* background-color: #b6bf95; */
+  border: #468c78 2px solid;
   padding: 8px 15px;
   border-radius: 5px;
   gap: 5px;
