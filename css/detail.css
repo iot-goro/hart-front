@@ -17,3 +17,119 @@ body {
     color: #3c0f0a;
     font-size: 24px;
   }
+
+  main {
+    /* 中央に配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+  
+
+  #search_icon {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #name_wrap {
+    /* 配置 */
+    margin: 10px auto;
+    /* サイズ */
+    width: 100px;
+    height: 150px;
+
+    padding: 5px;
+  }
+  #icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  #name {
+    /* 文字デザイン */
+    color: #3c0f0a;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #title {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    /* 文字デザイン */
+    color: #3c0f0a;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 会話リストのスクロール */
+  #talk_wrap{
+    overflow-y: scroll;
+    margin-top: 20px;
+    height: 400px;
+
+  }
+
+  #detail_wrap {
+    /* 配置 */
+    margin: 10px auto;
+    /* サイズ */
+    width: 300px;
+    height: 300px;
+
+  }
+.talk_list{
+    /* 文字デザイン */
+    color: #3c0f0a;
+    font-family: "Josefin Sans", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: #468c78 2px solid;
+    margin: 20px;
+    padding: 10px;
+    /* 背景 */
+    background-color:#468c78;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* 時間 */
+.time_wrap{
+    display: flex;
+    height: fit-content;
+    gap: 8px;
+    background-color: #E9E3DD;
+    padding:0 5px;
+    border-radius: 5px;
+}
+.time_wrap p{
+    margin: 0px;
+}
+/* 話題 */
+.theme_wrap{
+    display: flex;
+    height: fit-content;
+}
+.theme_text{
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+/* 会話メモ　1行のみ表示する */
+.memo{
+    margin-top: 0;
+    width: 100%;            /* 親要素に合わせて幅を設定 */
+    max-width: 300px;       /* 最大幅を設定 */
+    white-space: nowrap; /* 折り返し無しにする */
+    overflow: hidden; /* はみ出た部分を非表示 */
+    text-overflow: ellipsis; /* 語尾を3点リーダーに */
+}
