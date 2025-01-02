@@ -33,7 +33,11 @@ header {
     linear-gradient(#468c78 2px, transparent 2px),
     linear-gradient(90deg, #468c78 2px, transparent 2px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -2px -2px, -2px -2px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+
+  /* 背景の描画範囲を内側に限定 */
+  background-clip: padding-box;
+  border: 4px solid #468c78;
 }
 
 #profile_wrap {
