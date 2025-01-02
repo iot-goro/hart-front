@@ -7,45 +7,49 @@ body {
     background-size: 100% 100vh;
     color: #3c0f0a;
 }
-#taiking_wrap{
+
+#taiking_wrap {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 250px;
     margin: 0 auto;
 }
 
 #name_wrap {
     /* サイズ */
     width: 300px;
-    height: 350px;
+    height: 280px;
     /* 配置 */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* 間隔 */
-    gap: 0px;
+    
 
 }
 
 
-#name{
+#name {
     font-size: 18px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
     /* 背景 */
     background-color: #468c78;
     padding: 0px 15px;
     border-radius: 5px;
 }
+h4{
+    margin-top: 0;
+}
 
 #image_container {
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* 画像を背面に表示 */
+    z-index: -1;
+    /* 画像を背面に表示 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,15 +59,100 @@ body {
 #taiking_img {
     width: 180px;
     height: 180px;
-    animation: rotation1 5s linear infinite;
+    animation: rotation 5s linear infinite;
 }
 
 /* 回転 */
-@keyframes rotation1{
-    0%{ transform:rotateY(0);}
-    100%{ transform:rotateY(360deg); }
-  }
-#title{
+@keyframes rotation {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+/* 会話リストのスクロール */
+#talk_wrap {
+    overflow-y: scroll;
+    margin-top: 0;
+    height: 200px;
+    margin-bottom: 20px;
+
+}
+
+#detail_wrap {
+    /* 配置 */
+    margin: 10px auto;
+    /* サイズ */
+    width: 300px;
+    height: 300px;
+
+}
+
+.talk_list {
+    /* 文字デザイン */
+    color: #3c0f0a;
+    font-family: "Josefin Sans", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: #468c78 2px solid;
+    margin: 10px;
+    padding: 10px;
+    /* 背景 */
+    background-color: #468c78;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* 時間 */
+.time_wrap {
+    display: flex;
+    height: fit-content;
+    gap: 8px;
+    background-color: #E9E3DD;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.time_wrap p {
+    margin: 0px;
+}
+
+/* 話題 */
+.theme_wrap {
+    display: flex;
+    height: fit-content;
+}
+
+.theme_text {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+
+/* 会話メモ　1行のみ表示する */
+.memo {
+    margin-top: 0;
+    width: 100%;
+    /* 親要素に合わせて幅を設定 */
+    max-width: 300px;
+    /* 最大幅を設定 */
+    white-space: nowrap;
+    /* 折り返し無しにする */
+    overflow: hidden;
+    /* はみ出た部分を非表示 */
+    text-overflow: ellipsis;
+    /* 語尾を3点リーダーに */
+}
+
+#title {
     margin-left: 20px;
     margin-top: 0;
     /* 文字デザイン */
@@ -72,40 +161,49 @@ body {
     font-weight: bold;
 
 }
-  /* 会話メモ */
-  #memo{
+
+
+/* 会話メモ */
+
+#memo_wrap{
+    margin: 0 auto;
+    /* 枠線 */
+    border: #468c78 2px solid;
+    margin: 20px;
+    padding: 10px;
+
+    /* 背景 */
+    background-color: #468c78;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* サイズ */
+    height: 80px;
+    overflow: scroll;
+    
+}
+
+#talk_memo {
     margin: 0 auto;
     /* 配置 */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* 間隔 */
-    gap: 10px;
 
-    /* 枠線 */
-    border: #468c78 2px solid;
-    margin: 20px;
-    padding: 30px;
-    /* 背景 */
-    background-color:#468c78;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+    
 
-    /* サイズ */
-    height: 70px;
-    overflow: scroll;
-  }
+/* 会話終了ボタン */
 
-  /* 会話終了ボタン */
-
-footer{
-    margin-top: 150px;
+footer {
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-  button{
+
+button {
     font-family: "Josefin Sans", serif;
     /* 文字デザイン */
     background-color: #b6bf95;
@@ -116,10 +214,11 @@ footer{
     border: none;
     /* 配置 */
     width: fit-content;
-  
+
     /* 角を丸くする */
     border-radius: 5px;
     /* 背景色 */
     background-color: #468c78;
-    padding: 5px 10px; /* ボタン内の余白調整 */
-  }
+    padding: 5px 10px;
+    /* ボタン内の余白調整 */
+}
