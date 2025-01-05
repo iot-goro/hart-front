@@ -33,7 +33,7 @@ main {
   margin-top: 10px;
   width: fit-content;
   /* 背景 */
-  background-color: #468c78;
+  background-color: #598A6A;
   padding: 0px 15px;
   border-radius: 5px;
 }
@@ -49,7 +49,7 @@ h4 {
 
 .title {
   /* 文字デザイン */
-  color: #3c0f0a;
+  color: #163020;
   font-size: 18px;
   font-weight: bold;
   margin-left: 10px;
@@ -68,26 +68,26 @@ h4 {
 input {
   width: 200px;
   height: 20px;
-  border: #468c78 2px solid;
+  border: #598A6A 2px solid;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   /* 文字デザイン */
   font-family: "Josefin Sans", serif;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 14px;
   font-weight: bold;
-  background-color: #e9e3dd;
+  background-color: #F6F0E4;
 }
 
 button {
   /* 文字デザイン */
   font-family: "Josefin Sans", serif;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 14px;
   font-weight: bold;
   /* 背景 */
-  background-color: #468c78;
+  background-color: #598A6A;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 5px;
@@ -99,7 +99,7 @@ button {
   padding: 5px;
   margin: 0 20px;
   /* 枠線 */
-  border: #468c78 2px solid;
+  border: #598A6A 2px solid;
   border-radius: 5px;
 
   overflow-y: scroll;
@@ -114,7 +114,7 @@ ul {
   margin-bottom: 15px;
   padding: 5px;
   /* 背景 */
-  background-color: #e9e3dd;
+  background-color: #F6F0E4;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -123,13 +123,12 @@ ul {
 #memo_wrap {
   margin: 50px 20px;
   margin-top: 20px;
-  /* 枠線 */
-  border: #468c78 2px solid;
+  
 
   padding: 10px;
 
   /* 背景 */
-  background-color: #468c78;
+  background-color: #598A6A;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* サイズ */
@@ -158,8 +157,8 @@ footer {
 button {
   font-family: "Josefin Sans", serif;
   /* 文字デザイン */
-  background-color: #b6bf95;
-  color: #3c0f0a;
+  background-color: #F6F0E4;
+  color: #163020;
   font-size: 18px;
   font-weight: bold;
   /* 枠線の削除 */
@@ -170,7 +169,7 @@ button {
   /* 角を丸くする */
   border-radius: 5px;
   /* 背景色 */
-  background-color: #468c78;
+  background-color: #598A6A;
   padding: 5px 10px;
   /* ボタン内の余白調整 */
 }
