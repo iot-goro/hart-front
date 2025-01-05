@@ -15,7 +15,7 @@ header {
   align-items: center;
   /* 文字デザイン */
   font-weight: bold;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 24px;
 }
 
@@ -96,10 +96,10 @@ button img {
 }
 
 button div {
+  font-family: "Josefin Sans", serif;
   /* 文字デザイン */
-  color: #3c0f0a;
+  color: #F6F0E4;
   font-size: 18px;
-  font-weight: bold;
   text-align: center;
   text-decoration: none;
   display: inline-block;
