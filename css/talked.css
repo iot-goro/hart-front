@@ -95,6 +95,9 @@ button {
 }
 
 #talked_wrap {
+ 
+  /* サイズ */
+  width: 250px;
   height: 120px;
   padding: 5px;
   margin: 0 20px;
@@ -107,6 +110,10 @@ button {
 ul {
   /* 黒ボタンを無くす */
   list-style-type: none;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
 }
 
 #talked_wrap ul li {
