@@ -13,9 +13,11 @@ body {
   margin-top: 20px;
   /* 文字デザイン */
   font-weight: bold;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 24px;
   font-weight: bold;
+  /* テキストに影をつける */
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 50px #fff, 0 0 70px #fff;
 }
 
 button {
@@ -28,7 +30,7 @@ button {
 
   /* 文字デザイン */
   /* background-color: #b6bf95; */
-  border: #468c78 2px solid;
+  border: #598A6A 2px solid;
   padding: 8px 15px;
   border-radius: 5px;
   gap: 5px;
@@ -44,7 +46,7 @@ button div {
   align-items: center;
   /* 文字デザイン */
     font-family: "Nunito", serif;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 16px;
   font-weight: bold;
 }
