@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: "Josefin Sans", serif;
-    background: url(../images/detail_bg.jpg);
+    background: url(../images/detail_bg.png);
     background-repeat: no-repeat;
     /* 背景画像のサイズ */
     background-size: 100% 100vh;
