@@ -14,7 +14,7 @@ body {
     align-items: center;
     /* 文字デザイン */
     font-weight: bold;
-    color: #3c0f0a;
+    color: #163020;
     font-size: 24px;
   }
 
@@ -41,12 +41,18 @@ body {
     /* 配置 */
     margin: 10px auto;
     /* サイズ */
-    width: 100px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
 
     padding: 5px;
   }
   #icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 配置 */
+    margin: 10px auto;
+    /* サイズ */
     width: 100px;
     height: 100px;
     border-radius: 100%;
@@ -54,17 +60,35 @@ body {
   }
   #name {
     /* 文字デザイン */
-    color: #3c0f0a;
+    color: #163020;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
   }
+  #relation_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    /* サイズ */
+    overflow-x: scroll;
+    width: 100%;
+
+  }
+  .relation{
+    /* 文字デザイン */
+    color: #163020;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+  }
   #title {
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 20px;
     /* 文字デザイン */
-    color: #3c0f0a;
+    color: #163020;
     font-size: 18px;
     font-weight: bold;
 }
@@ -86,17 +110,17 @@ body {
   }
 .talk_list{
     /* 文字デザイン */
-    color: #3c0f0a;
+    color: #163020;
     font-family: "Josefin Sans", serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3px;
-    border: #468c78 2px solid;
+    border: #598A6A 2px solid;
     margin: 20px;
     padding: 10px;
     /* 背景 */
-    background-color:#468c78;
+    background-color:#598A6A;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     
@@ -107,7 +131,7 @@ body {
     display: flex;
     height: fit-content;
     gap: 8px;
-    background-color: #E9E3DD;
+    background-color: #F6F0E4;
     padding:0 5px;
     border-radius: 5px;
 }
