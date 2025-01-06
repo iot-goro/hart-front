@@ -137,6 +137,7 @@ footer div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #598A6A;
   gap: 0px;
 }
 /* 画面遷移ボタンのアイコン */
