@@ -142,15 +142,16 @@ h4 {
 .memo {
     margin-top: 0;
     width: 100%;
-    /* 親要素に合わせて幅を設定 */
+      /* 最大幅を設定 */
     max-width: 300px;
-    /* 最大幅を設定 */
-    white-space: nowrap;
     /* 折り返し無しにする */
+    white-space: nowrap;
+    /* はみ出た部分を非表示 */ 
     overflow: hidden;
-    /* はみ出た部分を非表示 */
+    /* 省略記号を表示 */
     text-overflow: ellipsis;
-    /* 語尾を3点リーダーに */
+   
+
 }
 
 #title {
