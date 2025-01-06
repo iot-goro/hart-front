@@ -39,7 +39,7 @@ main {
   align-items: center;
   /* 二重線の枠線 */
   border-style: double;
-  border-color: #468c78;
+  border-color: #598A6A;
   border-width: 5px;
   border-radius: 10px;
 }
@@ -58,7 +58,7 @@ main {
   /* 角を丸くする */
   border-radius: 10px;
   /* 背景色 */
-  background-color: #468c78;
+  background-color: #598A6A;
 }
 
 #change_btn {
@@ -85,7 +85,7 @@ button {
   /* 角を丸くする */
   border-radius: 10px;
   /* 背景色 */
-  background-color: #468c78;
+  background-color: #598A6A;
   gap: 5px;
 }
 
