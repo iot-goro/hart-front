@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/qr_code.css" />
-    <title>QRコード</title>
-  </head>
-  <body>
-    <header>相手とマッチする</header>
-    <main>
-      <!-- 読み取りQR画像 -->
-      <div id="qr_code_wrap">
-        <img src="../images/qr_temp.png" alt="QRコード" id="qr_code" />
-      </div>
-      <!-- 読み取るスキャン側に変更するボタン -->
-      <div id="change_btn">
-        <button>
-          <img src="../images/qr_icon.png" alt="QR読み取りアイコン" />
-          <div>QRコードを読み取る</div>
-        </button>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/qr_code.css" />
+  <title>QRコード</title>
+</head>
+
+<body>
+  <header>相手とマッチする</header>
+  <main>
+    <!-- 読み取りQR画像 -->
+    <div id="qr_code_wrap">
+      <img src="../images/qr_temp.png" alt="QRコード" id="qr_code" />
+    </div>
+    <!-- 読み取るスキャン側に変更するボタン -->
+    <div id="change_btn">
+      <button>
+        <img src="../images/qr_icon.png" alt="QR読み取りアイコン" />
+        <div>QRコードを読み取る</div>
+      </button>
+    </div>
+  </main>
+  <footer>
+    <!-- 画面遷移 -->
+    <div>
+      <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
+        <div>
+          history</div>
+      </button>
+      <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img src="../images/talk_icon.png" alt="会話を始めるアイコン">
+        <div>talk</div>
+      </button>
+      <button class="transition"onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png" alt="マイページに飛ぶアイコン">
+        <div>myPage</div>
+      </button>
+    </div>
+  </footer>
+</body>
+
 </html>

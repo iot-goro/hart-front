@@ -19,6 +19,13 @@
             <img src="../images/icon.png" alt="アイコン" id="icon">
             <!-- 名前 -->
             <h2 id="name">いっちゃん</h2>
+            <!-- 自分との関係 -->
+             <div id="relation_wrap">
+                <p class="relation">友達</p>
+                <p class="relation">中学</p>
+                <p class="relation">高校</p>
+             </div>
+            
         </div>
         <!-- トーク記録　リスト形式での表示 -->
 
@@ -105,6 +112,24 @@
         </div>
 
     </main>
+    <footer>
+        <!-- 画面遷移 -->
+        <div>
+            <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png"
+                    alt="トーク履歴に飛ぶアイコン">
+                <div>
+                    history</div>
+            </button>
+            <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img
+                    src="../images/talk_icon.png" alt="会話を始めるアイコン">
+                <div>talk</div>
+            </button>
+            <button class="transition" onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png"
+                    alt="マイページに飛ぶアイコン">
+                <div>myPage</div>
+            </button>
+        </div>
+    </footer>
 
 </body>
 

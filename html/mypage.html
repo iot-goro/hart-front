@@ -16,7 +16,6 @@
         </div>
         <!-- ナマエ -->
         <div class="name_wrap">
-          <label for="name">名前：</label>
           <h2>もふふ</h2>
         </div>
       </div>
@@ -24,7 +23,7 @@
         <!-- 話せる話題（＃〇〇など） -->
         <div class="hobby_wrap">
           <label for="hobby" class="title">話せる話題</label>
-          <div>
+          <div id="hobby_list_wrap">
             <ul class="hobby_list">
               <li>ねこ</li>
               <li>犬</li>
@@ -35,7 +34,6 @@
             </ul>
           </div>
         </div>
-        <!-- マッチングアプリイメージ -->
         <!-- 困っていること -->
         <div>
           <label for="recent" class="title">最近困ってること</label>
@@ -48,5 +46,20 @@
         </div>
       </div>
     </main>
+    <footer>
+      <!-- 画面遷移 -->
+      <div>
+        <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
+          <div>
+            history</div>
+        </button>
+        <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img src="../images/talk_icon.png" alt="会話を始めるアイコン">
+          <div>talk</div>
+        </button>
+        <button class="transition"onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png" alt="マイページに飛ぶアイコン">
+          <div>myPage</div>
+        </button>
+      </div>
+    </footer>
   </body>
 </html>

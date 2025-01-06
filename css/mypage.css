@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Josefin Sans", serif;
-  background: url(../images/mypage_bg.jpg);
+  background: url(../images/mypage_bg.png);
   background-repeat: no-repeat;
   /* 背景画像のサイズ */
   background-size: 100% 100vh;
@@ -15,7 +15,7 @@ header {
   align-items: center;
   /* 文字デザイン */
   font-weight: bold;
-  color: #3c0f0a;
+  color: #163020;
   font-size: 24px;
 }
 
@@ -27,17 +27,19 @@ header {
 
   z-index: -1;
 }
+
 .Paper {
-  background-image: linear-gradient(#468c78 2px, transparent 2px),
-    linear-gradient(90deg, #468c78 2px, transparent 2px),
-    linear-gradient(#468c78 2px, transparent 2px),
-    linear-gradient(90deg, #468c78 2px, transparent 2px);
+  background-image: linear-gradient(#598A6A 2px, transparent 2px),
+    linear-gradient(90deg, #598A6A 2px, transparent 2px),
+    linear-gradient(#598A6A 2px, transparent 2px),
+    linear-gradient(90deg, #598A6A 2px, transparent 2px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
 
   /* 背景の描画範囲を内側に限定 */
   background-clip: padding-box;
-  border: 4px solid #468c78;
+  border: 4px solid #598A6A;
+  border-radius: 10px;
 }
 
 #profile_wrap {
@@ -60,7 +62,8 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-color: #468c78;
+  background-color: #598A6A;
+  box-shadow: #163020 0px 1px 4px;
   padding: 5px;
 }
 
@@ -72,34 +75,54 @@ header {
 }
 
 .name_wrap {
+  width: 130px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* 文字デザイン */
-  color: #3c0f0a;
-  background-color: #468c78;
+  color: #163020;
+  background-color: #598A6A;
+  border-radius: 10px;
   padding: 0px 15px;
 }
+
+h2 {
+  /* 文字量によってサイズを変更 */
+  font-size: 18px;
+  color: #F6F0E4;
+}
+
 .title {
   /* 文字デザイン */
-  color: #3c0f0a;
+  color: #163020;
   font-size: 18px;
   font-weight: bold;
 }
+
 #mypage_wrap {
   /* 配置 */
   margin: 40px auto;
   /* サイズ */
   width: 300px;
-  height: 300px;
+  height: 250px;
 }
+
 .hobby_wrap {
   /* 文字デザイン */
-  color: #3c0f0a;
+  color: #163020;
 }
+
 .hobby_wrap div {
   margin: 5px;
   padding: 5px;
+}
+
+#hobby_list_wrap {
+  background-color: #598A6A;
+  border-radius: 10px;
+  padding: 5px;
+
 }
 
 .hobby_list {
@@ -107,22 +130,117 @@ header {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  /* 点をけす */
+  list-style-type: none;
   gap: 20%;
 }
+
 .hobby_list li {
-  border-bottom: #468c78 solid 2px;
+  color: #F6F0E4;
 }
 
 #recent {
-  margin: 5px;
-  padding: 5px;
-
+  /* 配置 */
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 5px;
+  padding: 5px;
+  /* 背景 */
+  background-color: #598A6A;
+  /* 枠線 */
+  border-radius: 10px;
+  /* 余白 */
   gap: 20%;
+
+  
 }
 
 #recent ul li {
-  border-bottom: #468c78 solid 2px;
+  color: #F6F0E4;
+  width: 80%;
+      /* 最大幅を設定 */
+    max-width: 300px;
+    /* 折り返し無しにする */
+    white-space: nowrap;
+    /* はみ出た部分を非表示 */ 
+    overflow: hidden;
+    /* 省略記号を表示 */
+    text-overflow: ellipsis;
+}
+
+/* 画面遷移要素 */
+
+footer {
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* ボタン親 */
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ボタン */
+.transition {
+  /* サイズを円状にする */
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  background-color: #598A6A;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+/* 画面遷移ボタンのアイコン */
+.transition img {
+  width: 45px;
+  height: 50px;
+}
+
+/* 画面遷移ボタンのテキスト */
+.transition div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* トーク開始ボタン */
+#match {
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+}
+
+/* トーク開始ボタンのアイコン */
+#match img {
+  width: 60px;
+  height: 60px;
+}
+
+/* トーク開始ボタンのテキスト */
+#match div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
