@@ -68,6 +68,10 @@ function closeModal() {
 
 // 名前検索を行う関数
 function searchUser() {
+    // ローカルストレージをクリア
+    localStorage.clear(); // すべてのローカルストレージをクリア
+    displaySelectedRelations(); // 表示を更新
+
     const searchInput = document.getElementById("searchInput").value.trim();
     const recentDiv = document.getElementById("recentContacts");
     recentDiv.innerHTML = ""; // 最近話した人のリストをクリア
@@ -102,6 +106,9 @@ function searchUser() {
 
 // チェックボックスで選択した関係で検索する関数
 function submitRelations() {
+    // ローカルストレージをクリア
+    localStorage.removeItem('selectedRelations');
+
     const checkedRelations = Array.from(document.querySelectorAll('input[name="relation"]:checked')).map(checkbox => checkbox.value);
     const recentDiv = document.getElementById("recentContacts");
     recentDiv.innerHTML = ""; // 最近話した人のリストをクリア
@@ -131,10 +138,15 @@ function submitRelations() {
             `;
             recentDiv.appendChild(userDiv); // 最近話した人リストに追加
         });
+
+        // ローカルストレージに保存
+        localStorage.setItem('selectedRelations', JSON.stringify(checkedRelations));
     } else {
-        recentDiv.innerHTML = "<p>該当するユーザーが見つかりませんでした。</p>";
+        recentDiv.innerHTML = "";
     }
 
+    // search_resultに表示
+    displaySelectedRelations();
     closeModal(); // モーダルを閉じる
 }
 
@@ -187,6 +199,27 @@ function generateRelationCheckboxes() {
     searchButton.innerText = "検索";
     searchButton.onclick = submitRelations; // 検索ボタンに関数を関連付け
     relationForm.appendChild(searchButton);
+}
+
+// ローカルストレージから選択した関係を取得して表示する関数
+function displaySelectedRelations() {
+    const searchResultDiv = document.getElementById('search_result');
+    const selectedRelations = JSON.parse(localStorage.getItem('selectedRelations')) || [];
+
+    // 結果をクリア
+    searchResultDiv.innerHTML = '';
+
+    if (selectedRelations.length > 0) {
+        const ul = document.createElement('ul');
+        selectedRelations.forEach(relation => {
+            const li = document.createElement('li');
+            li.textContent = relation; // リストアイテムに関係名を設定
+            ul.appendChild(li); // ULにLIを追加
+        });
+        searchResultDiv.appendChild(ul); // search_resultにULを追加
+    } else {
+        searchResultDiv.innerHTML = '';
+    }
 }
 
 // ページ読み込み時にチェックボックスを生成
