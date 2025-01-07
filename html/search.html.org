@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/search.css">
+    <title>検索画面</title>
+</head>
+
+<body>
+    <header>トーク履歴</header>
+    <main>
+        <div id="search_wrap">
+            <p class="title">相手を探す</p>
+            <div id="search_box_wrap">
+
+                <!-- 自分との関係性 -->
+                <button class="search">相手との関係</button>
+                <p id="or">または</p>
+                <div id="search_box">
+                    <!-- 検索ボックス -->
+                    <input type="text" placeholder="相手の名前を入力">
+                    <button class="search">検索</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 最近話した人 -->
+        <div id="recent_wrap">
+            <p class="title">最近話した人</p>
+            <!-- 話した人リスト（ナマエ、関係、アイコン、話題） -->
+            <div class="recent">
+                <div class="recent_list">
+
+                    <div class="name_wrap">
+                        <p class="name">いっちゃん</p>
+                        <img src="../images/icon.png" alt="アイコン" class="icon">
+                    </div>
+                    <div class="theme_wrap">
+                        <div class="theme">
+                            <p>関係：</p>
+                            <p>中学校</p>
+                            <p>友達</p>
+                        </div>
+                        <p class="theme">チャオチュール</p>
+                    </div>
+                </div>
+                <div class="recent_list">
+
+                    <div class="name_wrap">
+                        <p class="name">いっちゃん</p>
+                        <img src="../images/icon.png" alt="アイコン" class="icon">
+                    </div>
+                    <div class="theme_wrap">
+                        <div class="theme">
+                            <p>関係：</p>
+                            <p>中学校</p>
+                            <p>友達</p>
+                        </div>
+                        <p class="theme">チャオチュール</p>
+                    </div>
+                </div>
+                <div class="recent_list">
+
+                    <div class="name_wrap">
+                        <p class="name">いっちゃん</p>
+                        <img src="../images/icon.png" alt="アイコン" class="icon">
+                    </div>
+                    <div class="theme_wrap">
+                        <div class="theme">
+                            <p>関係：</p>
+                            <p>中学校</p>
+                            <p>友達</p>
+                        </div>
+                        <p class="theme">チャオチュール</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <!-- 画面遷移 -->
+        <div>
+            <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png"
+                    alt="トーク履歴に飛ぶアイコン">
+                <div>
+                    history</div>
+            </button>
+            <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img
+                    src="../images/talk_icon.png" alt="会話を始めるアイコン">
+                <div>talk</div>
+            </button>
+            <button class="transition" onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png"
+                    alt="マイページに飛ぶアイコン">
+                <div>myPage</div>
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>

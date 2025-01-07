@@ -1,0 +1,197 @@
+// ユーザー情報を格納した新しいサンプルJSONデータ
+const sample_json = {
+    "user": [
+        {
+            "id": "6505b6fb-9522-41c5-8821-479dc02988ff",
+            "name": "あっちゃん",
+            "icon": "../images/icon.png",
+            "relation": [        
+                "中学校",
+                "友達"
+            ],
+            "topic": "チャオチュール"
+        },
+        {
+            "id": "eb3b88b3-083b-49e5-9d5d-a45dd0d726ca",
+            "name": "いっちゃん",
+            "icon": "../images/icon.png",
+            "relation": [
+                "高校",
+                "友達"
+            ],
+            "topic": "チャオチュール"
+        },
+        {
+            "id": "2cf804ac-b782-4025-8647-eeff4d5e374e",
+            "name": "うっちゃん",
+            "icon": "../images/icon.png",
+            "relation": [
+                "高校",
+                "友達"
+            ],
+            "topic": "チャオチュール"
+        },
+        {
+            "id": "93b1fd25-71ab-4b1b-8b53-402eca7e4207",
+            "name": "えっちゃん",
+            "icon": "../images/icon.png",
+            "relation": [
+                "大学",
+                "友達"
+            ],
+            "topic": "チャオチュール"
+        },
+        {
+            "id": "a9b1fd25-71ab-4b1b-8b53-402eca7e4207",
+            "name": "おっちゃん",
+            "icon": "../images/icon.png",
+            "relation": [
+                "大学",
+                "友達"
+            ],
+            "topic": "チャオチュール"
+        }
+    ]
+};
+
+// モーダルを表示する関数
+function displayRelations() {
+    const modal = document.getElementById("relationModal");
+    modal.style.display = "flex"; // モーダルを表示
+}
+
+// モーダルを閉じる関数
+function closeModal() {
+    const modal = document.getElementById("relationModal");
+    modal.style.display = "none"; // モーダルを非表示
+}
+
+// 名前検索を行う関数
+function searchUser() {
+    const searchInput = document.getElementById("searchInput").value.trim();
+    const recentDiv = document.getElementById("recentContacts");
+    recentDiv.innerHTML = ""; // 最近話した人のリストをクリア
+
+    // 名前でユーザー情報をフィルタリング
+    const results = sample_json.user.filter(user => user.name.includes(searchInput));
+
+    // 検索結果を表示
+    if (results.length > 0) {
+        results.forEach(user => {
+            const userDiv = document.createElement("div");
+            userDiv.className = "recent_list"; // CSSクラスを追加
+            userDiv.innerHTML = `
+                <div class="name_wrap">
+                    <p class="name">${user.name}</p>
+                    <img src="${user.icon}" alt="アイコン" class="icon">
+                </div>
+                <div class="theme_wrap">
+                    <div class="theme">
+                        <p>関係：</p>
+                        ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
+                    </div>
+                    <p class="theme">${user.topic}</p>
+                </div>
+            `;
+            recentDiv.appendChild(userDiv); // 最近話した人リストに追加
+        });
+    } else {
+        recentDiv.innerHTML = "<p>該当するユーザーが見つかりませんでした。</p>";
+    }
+}
+
+// チェックボックスで選択した関係で検索する関数
+function submitRelations() {
+    const checkedRelations = Array.from(document.querySelectorAll('input[name="relation"]:checked')).map(checkbox => checkbox.value);
+    const recentDiv = document.getElementById("recentContacts");
+    recentDiv.innerHTML = ""; // 最近話した人のリストをクリア
+
+    // 選択された関係に基づいてユーザー情報をフィルタリング
+    const results = sample_json.user.filter(user => 
+        user.relation.some(rel => checkedRelations.includes(rel))
+    );
+
+    // 検索結果を表示
+    if (results.length > 0) {
+        results.forEach(user => {
+            const userDiv = document.createElement("div");
+            userDiv.className = "recent_list"; // CSSクラスを追加
+            userDiv.innerHTML = `
+                <div class="name_wrap">
+                    <p class="name">${user.name}</p>
+                    <img src="${user.icon}" alt="アイコン" class="icon">
+                </div>
+                <div class="theme_wrap">
+                    <div class="theme">
+                        <p>関係：</p>
+                        ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
+                    </div>
+                    <p class="theme">${user.topic}</p>
+                </div>
+            `;
+            recentDiv.appendChild(userDiv); // 最近話した人リストに追加
+        });
+    } else {
+        recentDiv.innerHTML = "<p>該当するユーザーが見つかりませんでした。</p>";
+    }
+
+    closeModal(); // モーダルを閉じる
+}
+
+
+// 最近話した人を表示する機能
+function displayRecentContacts() {
+    const recentDiv = document.getElementById("recentContacts");
+    sample_json.user.forEach(user => {
+        const recentDivItem = document.createElement("div");
+        recentDivItem.className = "recent_list"; // CSSクラスを追加
+        recentDivItem.innerHTML = `
+            <div class="name_wrap">
+                <p class="name">${user.name}</p>
+                <img src="${user.icon}" alt="アイコン" class="icon">
+            </div>
+            <div class="theme_wrap">
+                <div class="theme">
+                    <p>関係：</p>
+                    ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
+                </div>
+                <p class="theme">${user.topic}</p>
+            </div>
+        `;
+        recentDiv.appendChild(recentDivItem); // 最近話した人リストに追加
+    });
+}
+
+// ユーザー情報から関係の種類を抽出してチェックボックスを生成する関数
+function generateRelationCheckboxes() {
+    const relationSet = new Set(); // 重複を除くためのセット
+    sample_json.user.forEach(user => {
+        user.relation.forEach(rel => {
+            relationSet.add(rel); // セットに追加して重複を排除
+        });
+    });
+
+    const relationForm = document.getElementById("relationForm");
+    relationForm.innerHTML = ""; // 既存のチェックボックスをクリア（検索ボタンは残すために別処理）
+
+    relationSet.forEach(rel => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" name="relation" value="${rel}"> ${rel}`;
+        relationForm.appendChild(label);
+        relationForm.appendChild(document.createElement("br")); // 改行を追加
+    });
+
+    // 検索ボタンを再追加
+    const searchButton = document.createElement("button");
+    searchButton.type = "button";
+    searchButton.innerText = "検索";
+    searchButton.onclick = submitRelations; // 検索ボタンに関数を関連付け
+    relationForm.appendChild(searchButton);
+}
+
+// ページ読み込み時にチェックボックスを生成
+window.onload = function() {
+    displayRecentContacts(); // 最近話した人を表示
+    generateRelationCheckboxes(); // チェックボックスを生成
+};
+

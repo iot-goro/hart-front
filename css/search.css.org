@@ -195,23 +195,3 @@ footer div {
   text-decoration: none;
   display: inline-block;
 }
-
-.modal {
-  display: none; /* 最初は非表示 */
-  position: fixed; /* 固定位置 */
-  z-index: 1000; /* 他の要素より前に表示 */
-  left: 0;
-  top: 0;
-  width: 100%; /* 幅100% */
-  height: 100%; /* 高さ100% */
-  background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明に */
-  justify-content: center; /* 中央揃え */
-  align-items: center; /* 中央揃え */
-}
-
-.modal-content {
-  background-color: #fff; /* モーダルの背景色 */
-  padding: 20px; /* 内側の余白 */
-  border-radius: 5px; /* 角を丸く */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影をつける */
-}
