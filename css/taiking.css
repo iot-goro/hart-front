@@ -224,3 +224,50 @@ button {
     padding: 5px 10px;
     /* ボタン内の余白調整 */
 }
+
+
+
+/* ダイアログ */
+
+dialog{
+
+    background-color: #598A6A;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    overflow: scroll;
+    position: relative;
+}
+
+#close{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #163020;
+    font-size: 30px;
+}
+
+#user_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #163020;
+    font-size: 18px;
+}
+#user_relation_wrap{
+    overflow-y: scroll;
+}
+.user_relation{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    color: #163020;
+    font-size: 14px;
+    list-style: none;
+    gap: 15px;
+}
