@@ -93,7 +93,20 @@ input {
   background-color: #598A6A;
   padding: 5px 10px; /* ボタン内の余白調整 */
 }
-
+#search_result{
+  height: fit-content;
+  width: 250px;
+    margin: 0 15px;
+    overflow-x: scroll;
+}
+#search_result ul{
+  /* 点なくす */
+  list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0;
+}
 #recent_wrap{
     margin-top: 40px;
 }
