@@ -31,18 +31,6 @@
           <p class="title">話題リスト</p>
           <div id="talked_wrap">
             <ul>
-              <li>ねこ</li>
-              <li>犬</li>
-              <li>鳥</li>
-              <li>魚</li>
-              <li>鳥</li>
-            </ul>
-            <ul>
-              <li>ねこ</li>
-              <li>犬</li>
-              <li>鳥</li>
-              <li>魚</li>
-              <li>鳥</li>
             </ul>
           </div>
         </div>
@@ -58,9 +46,32 @@
         </div>
       </div>
     </main>
-
+    <dialog>
+      <div id="user_detail_wrap">
+          <p id="close">×</p>
+          <div id="user_detail">
+              <p id="user_name">いっちゃん</p>
+              <div id="user_relation_wrap">
+                  <ul class="user_relation">
+                      <li>友達</li>
+                      <li>中学</li>
+                      <li>高校</li>
+                  </ul>
+                  <ul class="user_relation">
+                    <li>友達</li>
+                    <li>中学</li>
+                    <li>高校</li>
+                </ul>
+              </div>
+              
+              
+          </div>
+      </div>
+  </dialog>
     <footer>
       <button onclick="location.href='./home.html'">会話を記録する</button>
     </footer>
+    <script src="../scripts/word.js"></script>
+    <script src="../scripts/user_detail.js"></script>
   </body>
 </html>

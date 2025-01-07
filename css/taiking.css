@@ -244,12 +244,12 @@ dialog{
 
 #close{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: -35px;
+    right: 15px;
     color: #163020;
     font-size: 30px;
-}
+  }
+  
 
 #user_detail{
     display: flex;
@@ -260,6 +260,7 @@ dialog{
     font-size: 18px;
 }
 #user_relation_wrap{
+    height: 150px;
     overflow-y: scroll;
 }
 .user_relation{
