@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="/hart-front/css/start.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -13,12 +13,30 @@
     <title>お気持ち表明</title>
 </head>
 <body>
-    <section class="showcase"></section>
+    <section class="showcase">
         <!-- ループ動画を再生 -->
-        <video src="/movies/sky.mp4" autoplay loop muted></video>
         
+            <video src="/hart-front/movies/home.mp4" autoplay loop muted></video>
+        <div class="overlay">
+            <div class="text">
+            <a href="#">🌟はじめる🌟<img src="/hart-front/images/button.png"alt=""></a>
+                
+            </div>
+        </div>
+        
+    </section>
+    <script>
+        const menuToggle = document.querySelector(".toggle");
+        const showcase = document.querySelector(".showcase");
+        
+        menuToggle.addEventListener("click", function () {
+            /* activeにする */
+            menuToggle.classList.toggle("active");
+            showcase.classList.toggle("active");
+        });
+    </script>
+
+
         <script src="/scripts/start.js"></script>
 </body>
 </html>
-
-<!-- test -->
