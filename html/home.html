@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/hart-front/styles/home.css">
     <title>スマホサイズ画面</title>
 </head>
@@ -40,6 +41,29 @@
             <img src="/hart-front/images/image 6.png" alt="ボタン3" class="button3">
         </footer>
     </div>
+
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 仮として画面遷移ボタンの配置 -->
+    <footer>
+        <!-- 画面遷移 -->
+        <div>
+          <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
+            <div>
+              history</div>
+          </button>
+          <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img src="../images/talk_icon.png" alt="会話を始めるアイコン">
+            <div>talk</div>
+          </button>
+          <button class="transition"onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png" alt="マイページに飛ぶアイコン">
+            <div>myPage</div>
+          </button>
+        </div>
+      </footer>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/hart-front/scripts/home.js"></script>

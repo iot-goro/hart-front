@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    font-family: "Josefin Sans", serif;
+    background: url(../images/search_bg.png);
+    background-repeat: no-repeat;
+    /* 背景画像のサイズ */
+    background-size: 100% 100vh;
+    color: #163020;
+}
+
+#taiking_wrap {
+    position: relative;
+    width: 280px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+#name_wrap {
+    /* サイズ */
+    width: 300px;
+    height: 280px;
+    /* 配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+#name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    /* 背景 */
+    background-color: #598A6A;
+    padding: 0px 15px;
+    border-radius: 5px;
+}
+
+h4 {
+    margin-top: 0;
+}
+
+#image_container {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* 画像を背面に表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#taiking_img {
+    width: 180px;
+    height: 180px;
+    animation: rotation 5s linear infinite;
+}
+
+/* 回転 */
+@keyframes rotation {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+/* 会話リストのスクロール */
+#talk_wrap {
+    overflow-y: scroll;
+    margin-top: 0;
+    height: 200px;
+    margin-bottom: 20px;
+
+}
+
+#detail_wrap {
+    /* 配置 */
+    margin: 10px auto;
+    /* サイズ */
+    width: 300px;
+    height: 300px;
+
+}
+
+.talk_list {
+    /* 文字デザイン */
+    color: #163020;
+    font-family: "Josefin Sans", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: #598A6A 2px solid;
+    margin: 10px;
+    padding: 10px;
+    /* 背景 */
+    background-color: #598A6A;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* 時間 */
+.time_wrap {
+    display: flex;
+    height: fit-content;
+    gap: 8px;
+    background-color: #F6F0E4;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.time_wrap p {
+    margin: 0px;
+}
+
+/* 話題 */
+.theme_wrap {
+    display: flex;
+    height: fit-content;
+}
+
+.theme_text {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+
+/* 会話メモ　1行のみ表示する */
+.memo {
+    margin-top: 0;
+    width: 100%;
+      /* 最大幅を設定 */
+    max-width: 300px;
+    /* 折り返し無しにする */
+    white-space: nowrap;
+    /* はみ出た部分を非表示 */ 
+    overflow: hidden;
+    /* 省略記号を表示 */
+    text-overflow: ellipsis;
+   
+
+}
+
+#title {
+    margin-left: 20px;
+    margin-top: 0;
+    /* 文字デザイン */
+    color: #163020;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+
+/* 会話メモ */
+
+#memo_wrap {
+    margin: 0 auto;
+    /* 枠線 */
+    border: #598A6A 2px solid;
+    margin: 20px;
+    padding: 10px;
+
+    /* 背景 */
+    background-color: #598A6A;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* サイズ */
+    height: 80px;
+    overflow: scroll;
+
+}
+
+#talk_memo {
+    margin: 0 auto;
+    /* 配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+
+}
+
+
+/* 会話終了ボタン */
+
+footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-family: "Josefin Sans", serif;
+    
+    color: #163020;
+    font-size: 18px;
+    font-weight: bold;
+    /* 枠線の削除 */
+    border: none;
+    /* 配置 */
+    width: fit-content;
+
+    /* 角を丸くする */
+    border-radius: 5px;
+    /* 背景色 */
+    background-color: #598A6A;
+    padding: 5px 10px;
+    /* ボタン内の余白調整 */
+}
+
+
+
+/* ダイアログ */
+
+dialog{
+
+    background-color: #598A6A;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    overflow: scroll;
+    position: relative;
+}
+
+#close{
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    color: #163020;
+    font-size: 30px;
+  }
+  
+
+#user_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #163020;
+    font-size: 18px;
+}
+#user_relation_wrap{
+    height: 150px;
+    overflow-y: scroll;
+}
+.user_relation{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    color: #163020;
+    font-size: 14px;
+    list-style: none;
+    gap: 15px;
+}

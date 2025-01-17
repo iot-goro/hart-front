@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/talked.css" />
+    <title>会話終了</title>
+  </head>
+  <body>
+    <main>
+      <!-- 会話相手の名前 -->
+      <div id="name_wrap">
+        <h3 id="name" class="text">いっちゃん</h3>
+        <h4 class="text">と会話終了</h4>
+      </div>
+      <!-- 話題入力 何個でも-->
+      <div id="input_wrap">
+        <p class="title">今回の話題は？</p>
+        <div id="input_box_wrap">
+          <input type="text" placeholder="話題を入力" />
+          <button class="send">追加</button>
+        </div>
+        <!-- 過去の会話 -->
+        <div>
+          <p class="title">話題リスト</p>
+          <div id="talked_wrap">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 会話記録 -->
+      <div id="talk_memo_wrap">
+        <p class="title">会話メモ</p>
+        <div id="memo_wrap">
+          <p id="talk_memo">
+            CSSってさ、Webサイト作るときめっちゃ便利だよね。ほんとそれ！文字の色とか背景とか、簡単に変えられるしさ。しかも、ひとつのCSSファイルで何ページもまとめてデザインできるんだよね。あ、知ってる？最近Tailwind
+            CSSとかいうフレームワーク、流行ってるらしいよ。ああ、あれね！クラス名書くだけでパパッとデザインできるやつでしょ？そうそう！あと、スマホとかPCに合わせたレスポンシブデザインも楽だし、アニメーションも作れちゃう。CSSって、やっぱりすごいねー！
+          </p>
+        </div>
+      </div>
+    </main>
+    <dialog>
+      <div id="user_detail_wrap">
+          <p id="close">×</p>
+          <div id="user_detail">
+              <p id="user_name">いっちゃん</p>
+              <div id="user_relation_wrap">
+                  <ul class="user_relation">
+                      <li>友達</li>
+                      <li>中学</li>
+                      <li>高校</li>
+                  </ul>
+                  <ul class="user_relation">
+                    <li>友達</li>
+                    <li>中学</li>
+                    <li>高校</li>
+                </ul>
+              </div>
+              
+              
+          </div>
+      </div>
+  </dialog>
+    <footer>
+      <button onclick="location.href='./home.html'">会話を記録する</button>
+    </footer>
+    <script src="../scripts/word.js"></script>
+    <script src="../scripts/user_detail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/QR_bg.png);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
+}
+
+header {
+  margin: 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #163020;
+  font-size: 24px;
+  position: relative;
+}
+
+#home {
+  /* 左に配置 */
+  position: absolute;
+  left: 10px;
+  top: -8px;
+}
+
+#home img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+main {
+  /* 中央に配置 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 60px 15px;
+  padding: 0;
+  /* サイズ */
+  height: 80%;
+}
+
+#qr_code_wrap {
+  /* 中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 二重線の枠線 */
+  border-style: double;
+  border-color: #598A6A;
+  border-width: 5px;
+  border-radius: 10px;
+}
+
+#qr_code {
+  /* 中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 配置 */
+  margin: 10px;
+  padding: 0;
+  /* サイズ */
+  width: 300px;
+  height: 300px;
+  /* 角を丸くする */
+  border-radius: 10px;
+  /* 背景色 */
+  background-color: #598A6A;
+}
+
+#change_btn {
+  /* 配置 */
+  margin: 40px auto;
+  padding: 0;
+  /* サイズ */
+  width: 300px;
+  height: 50px;
+}
+
+button {
+  /* 横並びにする */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 枠線の削除 */
+  border: none;
+  /* 配置 */
+  width: 300px;
+  height: 50px;
+  padding: 0;
+  margin: 4px 2px;
+  /* 角を丸くする */
+  border-radius: 10px;
+  /* 背景色 */
+  background-color: #598A6A;
+  gap: 5px;
+}
+
+button img {
+  /* ボタン内の画像サイズ */
+  width: 30px;
+  height: 30px;
+}
+
+button div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* 画面遷移要素 */
+
+footer {
+  margin: 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #163020;
+  font-size: 24px;
+}
+
+/* ボタン親 */
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+/* ボタン */
+.transition {
+  /* サイズを円状にする */
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #598A6A;
+  gap: 0px;
+}
+/* 画面遷移ボタンのアイコン */
+.transition img {
+  width: 45px;
+  height: 50px;
+}
+
+/* 画面遷移ボタンのテキスト */
+.transition div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+/* トーク開始ボタン */
+#match{
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+}
+/* トーク開始ボタンのアイコン */
+#match img {
+  width: 60px;
+  height: 60px;
+}
+
+/* トーク開始ボタンのテキスト */
+#match div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
