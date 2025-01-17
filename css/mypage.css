@@ -17,7 +17,22 @@ header {
   font-weight: bold;
   color: #163020;
   font-size: 24px;
+  position: relative;
 }
+#home {
+  /* 左に配置 */
+  position: absolute;
+  left: 10px;
+  top: -8px;
+}
+
+#home img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
 
 .bg_pattern {
   top: 0;
