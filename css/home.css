@@ -1,74 +1,76 @@
 /* 画面遷移要素 */
 
 footer {
-    margin: 20px;
-    /* 上下中央に配置 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 文字デザイン */
-    font-weight: bold;
-    color: #163020;
-    font-size: 24px;
-  }
-  
-  /* ボタン親 */
-  footer div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-  }
-  /* ボタン */
-  .transition {
-    /* サイズを円状にする */
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #598A6A;
-    gap: 0px;
-  }
-  /* 画面遷移ボタンのアイコン */
-  .transition img {
-    width: 45px;
-    height: 50px;
-  }
-  
-  /* 画面遷移ボタンのテキスト */
-  .transition div {
-    font-family: "Josefin Sans", serif;
-    /* 文字デザイン */
-    color: #F6F0E4;
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  /* トーク開始ボタン */
-  #match{
-    width: 110px;
-    height: 110px;
-    border-radius: 100%;
-  }
-  /* トーク開始ボタンのアイコン */
-  #match img {
-    width: 60px;
-    height: 60px;
-  }
-  
-  /* トーク開始ボタンのテキスト */
-  #match div {
-    font-family: "Josefin Sans", serif;
-    /* 文字デザイン */
-    color: #F6F0E4;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  
+  margin: 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #163020;
+  font-size: 24px;
+}
+
+/* ボタン親 */
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ボタン */
+.transition {
+  /* サイズを円状にする */
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #598A6A;
+  gap: 0px;
+}
+
+/* 画面遷移ボタンのアイコン */
+.transition img {
+  width: 45px;
+  height: 50px;
+}
+
+/* 画面遷移ボタンのテキスト */
+.transition div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* トーク開始ボタン */
+#match {
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+}
+
+/* トーク開始ボタンのアイコン */
+#match img {
+  width: 60px;
+  height: 60px;
+}
+
+/* トーク開始ボタンのテキスト */
+#match div {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  color: #F6F0E4;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
