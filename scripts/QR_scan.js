@@ -7,6 +7,12 @@ token_submit.addEventListener("click",async function (evt) {
     console.log(token);
 
     await Matching(token);
+
+    // ローカルストレージのデータ削除
+    window.localStorage.removeItem("talk_memo");
+
+    // リダイレクト
+    window.location.href = TalkingURL;
 });
 
 async function Matching(token) {

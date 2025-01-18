@@ -2,6 +2,7 @@ const aitename = document.getElementById("name");
 
 const talk_memo = document.getElementById("talk_memo");
 
+
 // 登録ボタン
 const register_button = document.getElementById("register-button");
 
@@ -9,6 +10,9 @@ register_button.addEventListener("click", async function (evt) {
     try {
         // 登録
         await Register();
+
+        // ローカルストレージの会話を削除
+        window.localStorage.removeItem("talk_memo");
 
         // リダイレクト
         window.location.href = HomeURL;
@@ -60,6 +64,9 @@ async function Init() {
 
         console.log("話しています");
         console.log(InputValues);
+
+        const total_result = window.localStorage.getItem("talk_memo");
+        talk_memo.textContent = total_result;
     } catch (error) {
         console.error(error);
         alert("読み取りに失敗しました");
