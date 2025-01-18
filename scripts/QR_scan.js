@@ -27,26 +27,26 @@ async function Matching(token) {
     console.log(result);
 }
 
-async function GetStatus() {
-    const authData = await GetSession();
-
-    const req = await fetch("/app/status/",{
-        method:"GET",
-        headers : {
-            "Authorization" : authData["token"],
-        }
-    });
-
-    const result = await req.json();
-    return result["status"];
-}
 
 async function Init() {
-    const status = await GetStatus();
+    try {
+        const status = await GetStatus();
 
-    if (status["TalkStatus"] == "talking") {
+        // 話しているとき
+        if (status["TalkStatus"] == "talking") {
+            // リダイレクト
+            window.location.href = TalkingURL;
+        };
+
         
-    };
+    } catch (ex) {
+        // エラー処理
+        console.error(ex);
+        // alert("読み取りに失敗しました");
+
+        // ログインに飛ばす
+        // window.location.href = LoginURL;
+    }
 }
 
 Init();

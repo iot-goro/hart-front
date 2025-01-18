@@ -12,6 +12,10 @@ button.addEventListener('click', () => {
     // inputの値を取得
     const inputValue = input.value;
 
+    if (inputValue === '') {
+        return;
+    }
+
     // li要素を作成
     const li = document.createElement('li');
 
