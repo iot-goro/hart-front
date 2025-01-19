@@ -23,9 +23,8 @@
             <h2 id="name">いっちゃん</h2>
             <!-- 自分との関係 -->
             <div id="relation_wrap">
-                <p class="relation">友達</p>
-                <p class="relation">中学</p>
-                <p class="relation">高校</p>
+                <textarea name="" id="relation_textarea" placeholder="自分との関係"></textarea>
+                <button class="save-button" id="relation_save">保存</button>
             </div>
 
         </div>
@@ -34,83 +33,7 @@
         <h3 id="title">トーク記録</h2>
             <div id="talk_wrap">
                 <!-- 日付、時間、会話時間、話題、会話メモ -->
-                <div class="talk_list">
-                    <div class="time_wrap">
-                        <!-- 話した日付 -->
-                        <p class="date">2022年12月21日</p>
-                        <p class="time">20:00</p>
-                        <!-- 話した時間 -->
-                        <p class="time">30分</p>
-                    </div>
-                    <div class="memo_wrap">
-                        <!-- 話題 -->
-                        <div class="theme_wrap">
-                            <p class="title">話題：</p>
-                            <div class="theme_text">
-                                <p class="theme">ねこ</p>
-                                <p class="theme">おかし</p>
-                            </div>
-                        </div>
-
-
-                        <!-- 話した内容 -->
-                        <p class="memo">チャオチュールをあげるべきか迷ったら、猫の健康を第一に考えましょう。
-                            与える量を守り、あくまでおやつとして利用するのが大切です。栄養バランスを崩さないよう、普段の食事を優先しましょう。また、猫がアレルギーを持っている場合は成分表を確認し、安全な選択をしてください。チャオチュールは猫との絆を深める手助けになりますが、過剰な摂取は肥満や健康問題につながる恐れがあります。愛猫の体調を見ながら適切に楽しんでください。
-                        </p>
-
-                    </div>
-                </div>
-                <div class="talk_list">
-                    <div class="time_wrap">
-                        <!-- 話した日付 -->
-                        <p class="date">2021年12月2日</p>
-                        <p class="time">10:00</p>
-                        <!-- 話した時間 -->
-                        <p class="time">50分</p>
-                    </div>
-                    <div class="memo_wrap">
-                        <!-- 話題 -->
-                        <div class="theme_wrap">
-                            <p class="title">話題：</p>
-                            <div class="theme_text">
-                                <p class="theme">いか</p>
-                                <p class="theme">お酒</p>
-                            </div>
-                        </div>
-                        <!-- 話した内容 -->
-                        <p class="memo">イカとオレンジのお酒という組み合わせは、意外ながら絶妙な味わいを生み出します。
-                            柔らかく煮たイカの風味が、オレンジのフルーティーな甘さとほのかな酸味と絡み合い、口の中で新しい味覚の冒険が始まります。特に、オレンジリキュールをベースにしたカクテルやフレッシュオレンジジュースを使ったドリンクは、イカ料理との相性が抜群です。海の香りと柑橘の爽やかさが調和し、食事を一層楽しいものにします。次のパーティーや家族の集まりで、このユニークなペアリングを試してみてはいかがでしょうか？新しい美味しさに驚くこと間違いありません。
-                        </p>
-
-                    </div>
-                </div>
-                <div class="talk_list">
-                    <div class="time_wrap">
-                        <!-- 話した日付 -->
-                        <p class="date">2021年5月15日</p>
-                        <p class="time">14:30</p>
-                        <!-- 話した時間 -->
-                        <p class="time">30分</p>
-                    </div>
-                    <div class="memo_wrap">
-                        <!-- 話題 -->
-                        <div class="theme_wrap">
-                            <p class="title">話題：</p>
-                            <div class="theme_text">
-                                <p class="theme">コーヒー</p>
-                                <p class="theme">デザート</p>
-                            </div>
-                        </div>
-                        <!-- 話した内容 -->
-                        <p class="memo">コーヒーと濃厚なチョコレートケーキの組み合わせは、多くの人に愛されています。
-                            特にエスプレッソの深い苦味が、チョコレートの甘さと調和し、それぞれの味を引き立てます。
-                            また、コーヒーの香ばしい香りが口いっぱいに広がり、デザートタイムを贅沢に演出します。
-                            フルーツを添えたり、ホイップクリームを加えたりして、自分なりのアレンジを楽しむのもおすすめです。
-                            次回のリラックスタイムには、このクラシックなペアリングで心を満たしてみてください。
-                        </p>
-                    </div>
-                </div>
-
+                 
             </div>
 
     </main>
@@ -133,6 +56,15 @@
         </div>
     </footer>
 
+    <script src="../scripts/loader.js"></script>
+
+    <script src="../scripts/pocketbase.umd.js"></script>
+    <script src="../scripts/authsdk.js"></script>
+    <script src="../scripts/setting.js"></script>
+
+    <script src="../scripts/utils.js"></script>
+
+    <script src="../scripts/UserInfo.js"></script>
 </body>
 
 </html>

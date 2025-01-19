@@ -246,3 +246,17 @@ footer div {
   text-decoration: none;
   display: inline-block;
 }
+
+.save-button {
+  /* 四角にする */
+  border-radius: 5px;
+  background-color: #598A6A;
+  border: none;
+  color: #F6F0E4;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px 0px;
+}

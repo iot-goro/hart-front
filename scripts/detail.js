@@ -114,7 +114,7 @@ async function Init() {
 
         console.log("話しています");
 
-        
+        await ShowTalks(status["TalkingToID"]);
 
         vr_function();
     } catch (error) {
@@ -132,27 +132,31 @@ Init();
 const talk_wrap = document.getElementById("talk_wrap");
 
 // 過去の話した内容を表示する
-document.addEventListener("DOMContentLoaded", () => {
+async function ShowTalks(uid) {
+    const talks = await GetTalks(uid);
 
-    // 配列からサンプルデータを全件取得
-    const dataItem = [
-        {
-            id: 0,
-            date: "2022年12月21日",
-            time: "20:00",
+    const dataItem = [];
+    talks.forEach(talk => {
+        const talkDate = new Date(talk["CreatedAt"] * 1000);
+
+        const date = talkDate.getFullYear() + "年" + (talkDate.getMonth() + 1) + "月" + talkDate.getDate() + "日";
+        const time = talkDate.getHours() + ":" + (talkDate.getMinutes() < 10 ? "0" + talkDate.getMinutes() : talkDate.getMinutes());
+
+        let topic = "";
+        for (let i = 0; i < talk["Tags"].length; i++) {
+            const tag = talk["Tags"][i];
+            topic += tag + " ";
+        }
+
+        dataItem.push({
+            id: talk["TalkID"],
+            date: date,
+            time: time,
             // talk_time: "30分",
-            theme: "ねこ",
-            memo: "ねこを見た",
-        },
-        {
-            id: 1,
-            date: "2022年12月28日",
-            time: "20:00",
-            // talk_time: "30分",
-            theme: "いぬ",
-            memo: "いぬを見た",
-        },
-    ];
+            theme: topic,
+            memo: talk["Text"],
+        });
+    })
 
     dataItem.forEach(item => {
         // talk_listの要素を作成
@@ -224,5 +228,4 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(`${item.id} がクリックされました`);
         });
     });
-
-});
+};
