@@ -36,7 +36,7 @@ async function Init() {
         console.error(ex);
 
         // window location
-        // window.location.href = LoginURL;
+        window.location.href = LoginURL;
     }
 }
 

@@ -23,15 +23,23 @@ async function Init() {
                 topic += tag + " ";
             }
 
-            // リレーション取得
-            const relation = await GetRelation(talk["TalkToID"]);
+            let relationText = "";
+
+            try {
+                // リレーション取得
+                const relation = await GetRelation(talk["TalkToID"]);
+
+                relationText = relation["relation"]["relationDescription"];
+            } catch (error) {
+                console.error(error);
+            }
 
             // ユーザー情報を格納した新しいサンプルJSONデータ
             const add_data = {
                 "id": talk["TalkToID"],
                 "name": uinfo["UserName"],
                 "icon": GetIcon(talk["TalkToID"]),
-                "relation": [relation["relation"]["relationDescription"]],
+                "relation": [relationText],
                 "topic": topic
             };
 
@@ -49,10 +57,10 @@ async function Init() {
         hideLoading();
     } catch (error) {
         console.error(error);
-        alert("読み取りに失敗しました");
+        // alert("読み取りに失敗しました");
 
         // ログインに飛ばす
-        window.location.href = LoginURL;
+        // window.location.href = LoginURL;
     }
 }
 

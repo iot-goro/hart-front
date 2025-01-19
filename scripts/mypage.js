@@ -98,6 +98,9 @@ async function Init() {
         recent_textarea.value = await GetRecent();
     } catch (ex) {
         console.error(ex);
+
+        // window location
+        window.location.href = LoginURL;
     }
 }
 

@@ -96,17 +96,27 @@ async function Init() {
         icon.src = GetIcon(uid);
         name.textContent = user["UserName"];
 
-        // 自分との関係を取得する
-        const result = await GetRelation(uid);
-        relation_textarea.value = result["relation"]["relationDescription"];
+        try {
+            // 自分との関係を取得する
+            const result = await GetRelation(uid);
+            relation_textarea.value = result["relation"]["relationDescription"];
+        } catch (error) {
+            console.error(error);
+        }
 
-        // 会話を表示する
-        await ShowTalks();
-
+        try {
+            // 会話を表示する
+            await ShowTalks();
+        } catch (error) {
+            console.error(error);
+        }
         // ロード完了
         hideLoading();
     } catch (ex) {
         console.error(ex);
+
+        // window location
+        window.location.href = LoginURL;
     }
 }
 
