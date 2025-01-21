@@ -16,7 +16,7 @@
         </div>
         <!-- ナマエ -->
         <div class="name_wrap">
-          <h2>もふふ</h2>
+          <h2 id="name">もふふ</h2>
         </div>
       </div>
       <div id="mypage_wrap">
@@ -24,25 +24,19 @@
         <div class="hobby_wrap">
           <label for="hobby" class="title">話せる話題</label>
           <div id="hobby_list_wrap">
-            <ul class="hobby_list">
-              <li>ねこ</li>
-              <li>犬</li>
-            </ul>
-            <ul class="hobby_list">
-              <li>鳥</li>
-              <li>魚</li>
-            </ul>
+            <textarea name="" id="hobby_textarea" class="hobby_textarea"></textarea>
           </div>
         </div>
         <!-- 困っていること -->
         <div>
           <label for="recent" class="title">最近困ってること</label>
-          <div  id="recent">
-            <ul>
-              <li>猫がかわいすぎてまじやばすぎぴえん</li>
-              <li>夜ごはん悩み</li>
-            </ul>
+          <div id="recent">
+            <textarea name="" id="recent_textarea" class="recent_textarea"></textarea>
           </div>
+        </div>
+        <!-- 保存ボタン -->
+        <div id="save_btn_wrap">
+          <button class="save_btn" id="save_btn">保存</button>
         </div>
       </div>
     </main>
@@ -61,5 +55,11 @@
         </button>
       </div>
     </footer>
+
+    <script src="../scripts/pocketbase.umd.js"></script>
+    <script src="../scripts/authsdk.js"></script>
+    <script src="../scripts/setting.js"></script>
+
+    <script src="../scripts/mypage.js"></script>
   </body>
 </html>

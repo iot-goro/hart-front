@@ -64,7 +64,9 @@ header {
   justify-content: center;
   align-items: center;
   /* 配置 */
-  margin: 40px auto;
+  /* margin: 40px auto; */
+  margin: auto;
+  margin-bottom: 0px;
   /* サイズ */
   width: 300px;
   height: 300px;
@@ -117,10 +119,25 @@ h2 {
 
 #mypage_wrap {
   /* 配置 */
-  margin: 40px auto;
+  /* margin: 40px auto; */
+  margin: auto;
+  margin-top: 20px;
   /* サイズ */
   width: 300px;
   height: 250px;
+}
+
+
+#save_btn_wrap {
+  margin-top: 10px;
+  width: 300px;
+  height: auto;
+}
+
+.save_btn {
+  background-color: #598A6A;
+  color: #F6F0E4;
+  width: 100%;
 }
 
 .hobby_wrap {
@@ -136,8 +153,16 @@ h2 {
 #hobby_list_wrap {
   background-color: #598A6A;
   border-radius: 10px;
-  padding: 5px;
+  padding: 0px;
+  height: 100px;
+}
 
+.hobby_textarea {
+  background-color: #598A6A;
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  height: 100px;
 }
 
 .hobby_list {
@@ -162,7 +187,7 @@ h2 {
   align-items: center;
   /* 配置 */
   margin: 5px;
-  padding: 5px;
+  /* padding: 5px; */
   /* 背景 */
   background-color: #598A6A;
   /* 枠線 */
@@ -170,7 +195,15 @@ h2 {
   /* 余白 */
   gap: 20%;
 
-  
+  height: 100px;
+}
+
+.recent_textarea {
+  background-color: #598A6A;
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  height: 100px;
 }
 
 #recent ul li {
@@ -193,7 +226,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: 70px;
 }
 
 /* ボタン親 */

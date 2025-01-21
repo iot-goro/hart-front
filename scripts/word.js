@@ -7,10 +7,16 @@ const button = document.querySelector('.send');
 // ul
 const ul = document.querySelector('ul');
 
+let InputValues = [];
+
 // 追加ボタンを押した時の処理
 button.addEventListener('click', () => {
     // inputの値を取得
     const inputValue = input.value;
+
+    if (inputValue === '') {
+        return;
+    }
 
     // li要素を作成
     const li = document.createElement('li');
@@ -20,6 +26,8 @@ button.addEventListener('click', () => {
 
     // ul要素にli要素を追加
     ul.appendChild(li);
+
+    InputValues.push(inputValue);
 
     // inputの値を空にする
     input.value = '';
