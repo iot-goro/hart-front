@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/mypage.css" />
+    <title>MyPage</title>
+  </head>
+  <body>
+    <header><a id="home" href="./home.html"><img src="../images/home_icon.png" alt="ホームに戻るアイコン"></a><div>MyPage</div></header>
+    <main>
+      <div id="profile_wrap" class="bg_pattern Paper">
+        <!-- アイコン -->
+        <div id="icon_wrap">
+          <img src="../images/icon.png" alt="自分のアイコン" id="icon" />
+        </div>
+        <!-- ナマエ -->
+        <div class="name_wrap">
+          <h2>もふふ</h2>
+        </div>
+      </div>
+      <div id="mypage_wrap">
+        <!-- 話せる話題（＃〇〇など） -->
+        <div class="hobby_wrap">
+          <label for="hobby" class="title">話せる話題</label>
+          <div id="hobby_list_wrap">
+            <ul class="hobby_list">
+              <li>ねこ</li>
+              <li>犬</li>
+            </ul>
+            <ul class="hobby_list">
+              <li>鳥</li>
+              <li>魚</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 困っていること -->
+        <div>
+          <label for="recent" class="title">最近困ってること</label>
+          <div  id="recent">
+            <ul>
+              <li>猫がかわいすぎてまじやばすぎぴえん</li>
+              <li>夜ごはん悩み</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- 画面遷移 -->
+      <div>
+        <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
+          <div>
+            history</div>
+        </button>
+        <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img src="../images/talk_icon.png" alt="会話を始めるアイコン">
+          <div>talk</div>
+        </button>
+        <button class="transition"onclick="location.href='./mypage.html'"><img src="../images/myPage_icon.png" alt="マイページに飛ぶアイコン">
+          <div>myPage</div>
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>

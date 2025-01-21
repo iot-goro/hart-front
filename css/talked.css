@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/talked_bg.png);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
+}
+
+main {
+  /* 中央に配置 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 会話者名 */
+#name_wrap {
+  /* サイズ */
+  width: 300px;
+  height: 150px;
+  /* 配置 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  width: fit-content;
+  /* 背景 */
+  background-color: #598A6A;
+  padding: 0px 15px;
+  border-radius: 5px;
+}
+h4 {
+  margin-top: 0;
+}
+
+#input_wrap {
+  /* サイズ */
+  width: 300px;
+  height: 280px;
+}
+
+.title {
+  /* 文字デザイン */
+  color: #163020;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+#input_box_wrap {
+  /* 配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* サイズ */
+  width: 300px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  border: #598A6A 2px solid;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  /* 文字デザイン */
+  font-family: "Josefin Sans", serif;
+  color: #163020;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F6F0E4;
+}
+
+button {
+  /* 文字デザイン */
+  font-family: "Josefin Sans", serif;
+  color: #163020;
+  font-size: 14px;
+  font-weight: bold;
+  /* 背景 */
+  background-color: #598A6A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin-left: 10px;
+}
+
+#talked_wrap {
+ 
+  /* サイズ */
+  width: 250px;
+  height: 120px;
+  padding: 5px;
+  margin: 0 20px;
+  /* 枠線 */
+  border: #598A6A 2px solid;
+  border-radius: 5px;
+
+  overflow-y: scroll;
+}
+ul {
+  width: 100%;
+  margin: 0 auto;
+  /* 黒ボタンを無くす */
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+#talked_wrap ul li {
+  width: fit-content;
+  margin-bottom: 15px;
+  padding: 5px;
+  /* 背景 */
+  background-color: #F6F0E4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 会話メモ */
+#memo_wrap {
+  margin: 50px 20px;
+  margin-top: 20px;
+  
+
+  padding: 10px;
+
+  /* 背景 */
+  background-color: #598A6A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* サイズ */
+  height: 150px;
+  overflow: scroll;
+}
+
+#talk_memo {
+  margin: 0 auto;
+  /* 配置 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 会話記録ボタン */
+
+footer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: "Josefin Sans", serif;
+  /* 文字デザイン */
+  background-color: #F6F0E4;
+  color: #163020;
+  font-size: 18px;
+  font-weight: bold;
+  /* 枠線の削除 */
+  border: none;
+  /* 配置 */
+  width: fit-content;
+
+  /* 角を丸くする */
+  border-radius: 5px;
+  /* 背景色 */
+  background-color: #598A6A;
+  padding: 5px 10px;
+  /* ボタン内の余白調整 */
+}
+
+/* ダイアログ */
+
+dialog{
+
+  background-color: #598A6A;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  width: 200px;
+  margin: 10px auto;
+  overflow: scroll;
+  position: relative;
+}
+
+#close{
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  color: #163020;
+  font-size: 30px;
+}
+
+#user_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #163020;
+  font-size: 18px;
+}
+#user_relation_wrap{
+  height: 50px;
+  overflow-y: scroll;
+}
+.user_relation{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  color: #163020;
+  font-size: 14px;
+  list-style: none;
+  gap: 15px;
+}
