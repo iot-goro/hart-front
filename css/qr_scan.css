@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: "Josefin Sans", serif;
+    background: url(../images/QR_bg.png);
+    background-repeat: no-repeat;
+    /* 背景画像のサイズ */
+    background-size: 100% 100vh;
+  }
+
+  header {
+    margin: 20px;
+    /* 上下中央に配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 文字デザイン */
+    font-weight: bold;
+    color: #163020;
+    font-size: 24px;
+    position: relative;
+  }
+
+  #back {
+    /* 左に配置 */
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
+  #wrapper{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #msg{
+    color: #163020;
+    font-size: 18px;
+    margin: 10px 0;
+    
+  }
+
+  #canvas{
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+
+  }
+
+  button {
+    font-family: "Josefin Sans", serif;
+    /* 横並びにする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 枠線の削除 */
+    border: none;
+    /* 配置 */
+    width: 300px;
+    height: 50px;
+    padding: 0;
+    margin: 10px 2px;
+    /* 角を丸くする */
+    border-radius: 10px;
+    /* 背景色 */
+    background-color: #598A6A;
+    gap: 5px;
+    color: #F6F0E4;
+  }
