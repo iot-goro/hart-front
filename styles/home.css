@@ -4,7 +4,7 @@ body {
     /* display: block; */
     font-family: Arial, sans-serif;
     margin: 0;
-    background-image: url('/hart-front/images/home_backgraund.jpg');
+    background-image: url('../images/home_backgraund.jpg');
     background-size: 100% 100vh;
     background-size: cover; /*画像を画面全体に拡大*/
     background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
