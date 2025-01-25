@@ -33,122 +33,126 @@ header {
 }
 
 
-/* ドロワー(カテゴリー選択) */
-/* ドロワー全体 */
-.toggle_wrap {
-    position: relative;
-    width: 200px; /* 必要に応じて幅を調整 */
-    margin: 20px auto; /* 中央に配置 */
-}
+    /* ドロワー(カテゴリー選択) */
+    /* ドロワー全体 */
+    .toggle_wrap {
+        position: relative;
+        width: 200px;
+        /* 必要に応じて幅を調整 */
+        margin: 20px auto;
+        /* 中央に配置 */
+    }
 
-.toggle_wrap:last-of-type {
-    padding-top: 20px;
-}
-
-
-/* トグルスイッチ */
-.toggle_switch {
-    cursor: pointer;
-    background-color: #598A6A;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.toggle_switch.open {
-    background-color: #457857;
-}
-
-/* ドロワーメニュー */
-.toggle_contents {
-    position: absolute;
-    top: 100%; /* トグルスイッチの下に表示 */
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 10;
-}
-
-.toggle_contents p {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: #333;
-}
-
-.toggle_contents p:hover {
-    background-color: #f0f0f0;
-}
+    .toggle_wrap:last-of-type {
+        padding-top: 20px;
+    }
 
 
+    /* トグルスイッチ */
+    .toggle_switch {
+        cursor: pointer;
+        background-color: #598A6A;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-.scroll-area {
-flex: 1;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgba(255, 255, 255, 0); /* 0.5 が透過率 */
-overflow: hidden;
-position: relative;
-}
+    .toggle_switch.open {
+        background-color: #457857;
+    }
 
-.scroll-content {
-position: relative;
-width: 100%;
-height: 100%;
-overflow: hidden;
-}
+    /* ドロワーメニュー */
+    .toggle_contents {
+        position: absolute;
+        top: 100%;
+        /* トグルスイッチの下に表示 */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 10;
+    }
 
-.scroll-item {
-position: absolute;
-font-size: 24px;
-color: black;
-white-space: nowrap;
-}
+    .toggle_contents p {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        color: #333;
+    }
 
-/* 個別アニメーション設定 */
-.item1 {
-animation: scroll-left 6s linear infinite;
-top: 10%;
-left: 100%;
-}
+    .toggle_contents p:hover {
+        background-color: #f0f0f0;
+    }
 
-.item2 {
-animation: scroll-left 8s linear infinite;
-top: 30%;
-left: 100%;
-}
 
-.item3 {
-animation: scroll-left 10s linear infinite;
-top: 50%;
-left: 100%;
-}
 
-.item4 {
-animation: scroll-left 7s linear infinite;
-top: 70%;
-left: 100%;
-}
+    .scroll-area {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0);
+        /* 0.5 が透過率 */
+        overflow: hidden;
+        position: relative;
+    }
 
-.item5 {
-animation: scroll-left 9s linear infinite;
-top: 20%;
-left: 100%;
-}
+    .scroll-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
-.item6 {
-animation: scroll-left 11s linear infinite;
-top: 80%;
-left: 100%;
-}
+    .scroll-item {
+        position: absolute;
+        font-size: 24px;
+        color: black;
+        white-space: nowrap;
+    }
+
+    /* 個別アニメーション設定 */
+    .item1 {
+        animation: scroll-left 6s linear infinite;
+        top: 10%;
+        left: 100%;
+    }
+
+    .item2 {
+        animation: scroll-left 8s linear infinite;
+        top: 30%;
+        left: 100%;
+    }
+
+    .item3 {
+        animation: scroll-left 10s linear infinite;
+        top: 50%;
+        left: 100%;
+    }
+
+    .item4 {
+        animation: scroll-left 7s linear infinite;
+        top: 70%;
+        left: 100%;
+    }
+
+    .item5 {
+        animation: scroll-left 9s linear infinite;
+        top: 20%;
+        left: 100%;
+    }
+
+    .item6 {
+        animation: scroll-left 11s linear infinite;
+        top: 80%;
+        left: 100%;
+    }
 
 /* アニメーション効果 */
 @keyframes scroll-left {
@@ -160,27 +164,27 @@ left: 100%;
 }
 }
 
-.shape01{
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    background-color: #F6F0E4;
-}
+    .shape01 {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        background-color: #F6F0E4;
+    }
 
-.shape01{
-    border-top-left-radius: 100px;
-}
+    .shape01 {
+        border-top-left-radius: 100px;
+    }
 
-.shape02{
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    background-color: #AFC8AD;
-}
+    .shape02 {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        background-color: #AFC8AD;
+    }
 
-.shape02{
-    border-bottom-right-radius: 100px;
-}
+    .shape02 {
+        border-bottom-right-radius: 100px;
+    }
 
 .img1{
 bottom: 90px;

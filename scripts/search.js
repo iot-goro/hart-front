@@ -1,58 +1,142 @@
-// ユーザー情報を格納した新しいサンプルJSONデータ
-const sample_json = {
-    "user": [
-        {
-            "id": "6505b6fb-9522-41c5-8821-479dc02988ff",
-            "name": "あっちゃん",
-            "icon": "../images/icon.png",
-            "relation": [        
-                "中学校",
-                "友達"
-            ],
-            "topic": "チャオチュール"
-        },
-        {
-            "id": "eb3b88b3-083b-49e5-9d5d-a45dd0d726ca",
-            "name": "いっちゃん",
-            "icon": "../images/icon.png",
-            "relation": [
-                "高校",
-                "友達"
-            ],
-            "topic": "チャオチュール"
-        },
-        {
-            "id": "2cf804ac-b782-4025-8647-eeff4d5e374e",
-            "name": "うっちゃん",
-            "icon": "../images/icon.png",
-            "relation": [
-                "高校",
-                "友達"
-            ],
-            "topic": "チャオチュール"
-        },
-        {
-            "id": "93b1fd25-71ab-4b1b-8b53-402eca7e4207",
-            "name": "えっちゃん",
-            "icon": "../images/icon.png",
-            "relation": [
-                "大学",
-                "友達"
-            ],
-            "topic": "チャオチュール"
-        },
-        {
-            "id": "a9b1fd25-71ab-4b1b-8b53-402eca7e4207",
-            "name": "おっちゃん",
-            "icon": "../images/icon.png",
-            "relation": [
-                "大学",
-                "友達"
-            ],
-            "topic": "チャオチュール"
+let sample_json = {
+    "user": []
+}
+
+async function Init() {
+    try {
+        showLoading();
+        setLoadText("読み込み中");
+
+        // 会話の履歴取得
+        const talks = await GetTalkHistory();
+
+        const users = [];
+
+        for (let i = 0; i < talks.length; i++) {
+            const talk = talks[i];
+            const uinfo = await GetUserInfo(talk["TalkToID"]);
+
+            let topic = "";
+            // tags を回す
+            for (let j = 0; j < talk["Tags"].length; j++) {
+                const tag = talk["Tags"][j];
+                topic += tag + " ";
+            }
+
+            let relationText = "";
+
+            try {
+                // リレーション取得
+                const relation = await GetRelation(talk["TalkToID"]);
+
+                relationText = relation["relation"]["relationDescription"];
+            } catch (error) {
+                console.error(error);
+            }
+
+            // ユーザー情報を格納した新しいサンプルJSONデータ
+            const add_data = {
+                "id": talk["TalkToID"],
+                "name": uinfo["UserName"],
+                "icon": GetIcon(talk["TalkToID"]),
+                "relation": [relationText],
+                "topic": topic
+            };
+
+            users.push(add_data);
         }
-    ]
-};
+
+        sample_json = {
+            "user": users
+        };
+
+        displayRecentContacts(); // 最近話した人を表示
+        generateRelationCheckboxes(); // チェックボックスを生成
+
+        // ロード中の画面を非表示
+        hideLoading();
+    } catch (error) {
+        console.error(error);
+        // alert("読み取りに失敗しました");
+
+        // ログインに飛ばす
+        // window.location.href = LoginURL;
+    }
+}
+
+window.onload = async () => {
+    await Init();   
+}
+
+async function GetTalkHistory() {
+    const authData = await GetSession();
+
+    const req = await fetch("/app/talks",{
+        method: "GET",
+        headers: {
+            "Authorization": authData["token"],
+        }
+    });
+
+    const res = await req.json();   
+    return res["talks"];
+}
+
+// ユーザー情報を格納した新しいサンプルJSONデータ
+// const sample_json = {
+//     "user": [
+//         {
+//             "id": "6505b6fb-9522-41c5-8821-479dc02988ff",
+//             "name": "あっちゃん",
+//             "icon": "../images/icon.png",
+//             "relation": [
+//                 "中学校",
+//                 "友達"
+//             ],
+//             "topic": "チャオチュール"
+//         },
+//         {
+//             "id": "eb3b88b3-083b-49e5-9d5d-a45dd0d726ca",
+//             "name": "いっちゃん",
+//             "icon": "../images/icon.png",
+//             "relation": [
+//                 "高校",
+//                 "友達"
+//             ],
+//             "topic": "チャオチュール"
+//         },
+//         {
+//             "id": "2cf804ac-b782-4025-8647-eeff4d5e374e",
+//             "name": "うっちゃん",
+//             "icon": "../images/icon.png",
+//             "relation": [
+//                 "高校",
+//                 "友達"
+//             ],
+//             "topic": "チャオチュール"
+//         },
+//         {
+//             "id": "93b1fd25-71ab-4b1b-8b53-402eca7e4207",
+//             "name": "えっちゃん",
+//             "icon": "../images/icon.png",
+//             "relation": [
+//                 "大学",
+//                 "友達"
+//             ],
+//             "topic": "チャオチュール"
+//         },
+//         {
+//             "id": "a9b1fd25-71ab-4b1b-8b53-402eca7e4207",
+//             "name": "おっちゃん",
+//             "icon": "../images/icon.png",
+//             "relation": [
+//                 "大学",
+//                 "友達"
+//             ],
+//             "topic": "チャオチュール"
+//         }
+//     ]
+// };
 
 // モーダルを表示する関数
 function displayRelations() {
@@ -114,7 +198,7 @@ function submitRelations() {
     recentDiv.innerHTML = ""; // 最近話した人のリストをクリア
 
     // 選択された関係に基づいてユーザー情報をフィルタリング
-    const results = sample_json.user.filter(user => 
+    const results = sample_json.user.filter(user =>
         user.relation.some(rel => checkedRelations.includes(rel))
     );
 
@@ -154,6 +238,7 @@ function submitRelations() {
 // 最近話した人を表示する機能
 function displayRecentContacts() {
     const recentDiv = document.getElementById("recentContacts");
+    console.log(sample_json.user);
     sample_json.user.forEach(user => {
         const recentDivItem = document.createElement("div");
         recentDivItem.className = "recent_list"; // CSSクラスを追加
@@ -171,6 +256,12 @@ function displayRecentContacts() {
             </div>
         `;
         recentDiv.appendChild(recentDivItem); // 最近話した人リストに追加
+
+        recentDivItem.addEventListener("click", () => {
+            console.log("クリックされました");
+            console.log(user.id);
+            window.location.href = `./detail.html?uid=${user.id}`;
+        })
     });
 }
 
@@ -221,10 +312,3 @@ function displaySelectedRelations() {
         searchResultDiv.innerHTML = '';
     }
 }
-
-// ページ読み込み時にチェックボックスを生成
-window.onload = function() {
-    displayRecentContacts(); // 最近話した人を表示
-    generateRelationCheckboxes(); // チェックボックスを生成
-};
-
