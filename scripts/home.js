@@ -1,3 +1,9 @@
+// ロード中にする
+showLoading();
+
+// ロード中のテキストを設定
+setLoadText("読み込み中");
+
 document.addEventListener('DOMContentLoaded', () => {
     // スクロールコンテンツのクローン作成
     const scrollContent = document.querySelector('.scroll-content');
@@ -78,6 +84,9 @@ async function Init() {
         
         // トグルスイッチの状態を更新
         toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent;; // トグルスイッチに反映
+
+        // ロード中を隠す
+        hideLoading();
     } catch (error) {
         console.error(error);
         // alert("読み取りに失敗しました");
