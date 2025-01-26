@@ -54,7 +54,9 @@ function vr_function() {
         console.log(evt.error);
         console.log("エラー");
         if (flag_speech == 0) {
-            vr_function();
+            setTimeout(() => {
+                vr_function();
+            }, 1000);
         }
     };
     recognition.onsoundend = function () {

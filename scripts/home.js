@@ -103,7 +103,7 @@ async function Init() {
         console.error(error);
         // alert("読み取りに失敗しました");
         // ログインに飛ばす
-        // window.location.href = LoginURL;
+        window.location.href = LoginURL;
     }
 }
 

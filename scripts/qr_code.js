@@ -14,6 +14,12 @@ async function GetToken() {
 }
 
 async function Init() {
+    // ローディング表示
+    showLoading();
+
+    // テキスト設定 
+    setLoadText("読み込み中");
+
     try {
         // 認証情報取得
         const authData = await GetSession();
@@ -31,6 +37,19 @@ async function Init() {
         });
 
         console.log("トークンだよ: " + token);
+
+        setInterval(async () => {
+            const status = await GetStatus();
+
+            // 話しているとき
+            if (status["TalkStatus"] == "talking") {
+                // リダイレクト
+                window.location.href = TalkingURL;
+            };
+        }, 1000);
+
+        // ローディング解除
+        hideLoading();
 
     } catch (ex) {
         console.error(ex);
