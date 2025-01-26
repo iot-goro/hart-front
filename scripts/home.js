@@ -55,6 +55,11 @@ $(document).ready(function () {
     });
 });
 
+const iot_qr = document.getElementById("iot_qr");
+iot_qr.addEventListener("click", () => {
+    window.location.href = IotURL;
+})
+
 async function Init() {
     try {
         // ステータス取得
@@ -82,15 +87,21 @@ async function Init() {
         // トグルスイッチの状態を更新
         const toggleSwitch = document.querySelector('.toggle_wrap').querySelector('.toggle_switch p');
         
-        // トグルスイッチの状態を更新
-        toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent;; // トグルスイッチに反映
+        try {
+            // トグルスイッチの状態を更新
+            toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent; // トグルスイッチに反映
+        } catch (error) {
+            console.error(error);
+            // alert("読み取りに失敗しました");
+            // ログインに飛ばす
+            // window.location.href = LoginURL;
+        }
 
         // ロード中を隠す
         hideLoading();
     } catch (error) {
         console.error(error);
         // alert("読み取りに失敗しました");
-
         // ログインに飛ばす
         // window.location.href = LoginURL;
     }

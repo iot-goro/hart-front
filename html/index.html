@@ -21,23 +21,31 @@
         // uuid を取得する
         wsid = localStorage.getItem('wsid');
 
-        let ws = new WebSocket("wss://iot-hart.tail6cf7b.ts.net:8350/app/ws")
+        function ConnectWs() {
+            let ws = new WebSocket("wss://iot-hart.tail6cf7b.ts.net:8350/app/ws")
 
-        ws.onopen = function () {
-            console.log('Connected');
+            ws.onopen = function () {
+                console.log('Connected');
 
-            // 接続IDを送る
-            ws.send(wsid);
-        }
+                // 接続IDを送る
+                ws.send(wsid);
+            }
 
-        ws.onmessage = function (evt) {
-            var out = document.getElementById('output');
-            out.innerHTML += evt.data + '<br>';
-        }
+            ws.onmessage = function (evt) {
+                var out = document.getElementById('output');
+                out.innerHTML += evt.data + '<br>';
+            };
 
-        setInterval(function () {
-            // ws.send('Hello, Server!');
-        }, 1000);
+            ws.onclose = function () {
+                console.log('Disconnected');
+                // 再接続
+                setTimeout(() => {
+                    ConnectWs();
+                }, 3000);
+            };
+        };
+
+        ConnectWs();
     </script>
 </body>
 
