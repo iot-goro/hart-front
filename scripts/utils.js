@@ -14,7 +14,7 @@ async function GetStatus() {
 }
 
 async function GetUserInfo(userid) {
-    const req = await fetch(`https://iot-hart.tail6cf7b.ts.net:8350/auth/info/${userid}`,{
+    const req = await fetch(`/auth/info/${userid}`,{
         method:"GET",
     })
 

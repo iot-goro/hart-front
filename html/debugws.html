@@ -7,9 +7,10 @@
 </head>
 
 <body>
+    <div id="showqr"></div>
     <p id="output"></p>
-
-<!--     
+    
+    <script src="../scripts/qrcode.min.js"></script>
     <script>
         // uuid を生成する
         let wsid = crypto.randomUUID();
@@ -22,8 +23,17 @@
         // uuid を取得する
         wsid = localStorage.getItem('wsid');
 
+        var qrcode = new QRCode("showqr", {
+            text: wsid,
+            width: 500,
+            height: 500,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
         function ConnectWs() {
-            let ws = new WebSocket("wss://iot-hart.tail6cf7b.ts.net:8350/app/ws")
+            let ws = new WebSocket("wss://iot-hart.mattuu.com/app/ws")
 
             ws.onopen = function () {
                 console.log('Connected');
@@ -47,11 +57,10 @@
         };
 
         ConnectWs();
-    </script> -->
-
-    <script>
-        window.location.href = "./home.html";
     </script>
+
+    
+
 </body>
 
 </html>

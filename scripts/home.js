@@ -62,39 +62,40 @@ iot_qr.addEventListener("click", () => {
 
 async function Init() {
     try {
-        // ステータス取得
-        const status = await GetStatus();
-
-        // 話している時
-        if (status["TalkStatus"] == "talking") {
-            // リダイレクト
-            window.location.href = TalkingURL;
-            return;
-        };
-
-        // 認証情報取得
         const authData = await GetSession();
 
-        const req = await fetch("/app/userStatus/", {
-            method: "GET",
-            headers: {
-                "Authorization": authData["token"],
-            }
-        });
-
-        const result = await req.json();
-
-        // トグルスイッチの状態を更新
-        const toggleSwitch = document.querySelector('.toggle_wrap').querySelector('.toggle_switch p');
-        
         try {
+            // ステータス取得
+            const status = await GetStatus();
+
+            // 話している時
+            if (status["TalkStatus"] == "talking") {
+                // リダイレクト
+                window.location.href = TalkingURL;
+                return;
+            };
+        } catch (ex) {
+            console.error(ex);
+        }
+
+
+        try {
+            const req = await fetch("/app/userStatus/", {
+                method: "GET",
+                headers: {
+                    "Authorization": authData["token"],
+                }
+            });
+
+            const result = await req.json();
+
+            // トグルスイッチの状態を更新
+            const toggleSwitch = document.querySelector('.toggle_wrap').querySelector('.toggle_switch p');
+        
             // トグルスイッチの状態を更新
             toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent; // トグルスイッチに反映
         } catch (error) {
             console.error(error);
-            // alert("読み取りに失敗しました");
-            // ログインに飛ばす
-            // window.location.href = LoginURL;
         }
 
         // ロード中を隠す

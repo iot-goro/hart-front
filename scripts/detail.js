@@ -118,13 +118,21 @@ async function Init() {
 
         await ShowTalks(status["TalkingToID"]);
 
-        vr_function();
+        try {
+            vr_function();
+        } catch (error) {
+            console.error(error);
+        }
     } catch (error) {
         console.error(error);
-        alert("読み取りに失敗しました");
+        // alert(error);
+
+        // body に表示する
+        const body = document.querySelector("body");
+        body.textContent = error;
 
         // ログインに飛ばす
-        window.location.href = LoginURL;
+        // window.location.href = LoginURL;
     }
 }
 

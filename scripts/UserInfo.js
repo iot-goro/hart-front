@@ -46,29 +46,85 @@ async function ShowTalks() {
             topic += tag + " ";
         }
 
-        const talkHtml = `
-<div class="talk_list">
-    <div class="time_wrap">
-        <!-- 話した日付 -->
-        <p class="date">${date}</p>
-        <p class="time">${time}</p>
-    </div>
-    <div class="memo_wrap">
-        <!-- 話題 -->
-        <div class="theme_wrap">
-            <p class="title">話題：</p>
-            <div class="theme_text">
-                <p class="theme">${topic}</p>
-            </div>
-        </div>
-        <!-- 話した内容 -->
-        <p class="memo">
-            ${talk["Text"]}
-        </p>
-    </div>
-</div>
-`
-        document.getElementById("talk_wrap").innerHTML += talkHtml;
+        //         const talkHtml = `
+        // <div class="talk_list">
+        //     <div class="time_wrap">
+        //         <!-- 話した日付 -->
+        //         <p class="date">${date}</p>
+        //         <p class="time">${time}</p>
+        //     </div>
+        //     <div class="memo_wrap">
+        //         <!-- 話題 -->
+        //         <div class="theme_wrap">
+        //             <p class="title">話題：</p>
+        //             <div class="theme_text">
+        //                 <p class="theme">${topic}</p>
+        //             </div>
+        //         </div>
+        //         <!-- 話した内容 -->
+        //         <p class="memo">
+        //             ${talk["Text"]}
+        //         </p>
+        //     </div>
+        // </div>
+        // `
+        //         document.getElementById("talk_wrap").innerHTML += talkHtml;
+        const talkList = document.createElement("div");
+        talkList.className = "talk_list";
+
+        const timeWrap = document.createElement("div");
+        timeWrap.className = "time_wrap";
+
+        // 日付と時間を追加
+        const dateElement = document.createElement("p");
+        dateElement.className = "date";
+        dateElement.textContent = date; // XSS対策
+
+        const timeElement = document.createElement("p");
+        timeElement.className = "time";
+        timeElement.textContent = time; // XSS対策
+
+        timeWrap.appendChild(dateElement);
+        timeWrap.appendChild(timeElement);
+
+        const memoWrap = document.createElement("div");
+        memoWrap.className = "memo_wrap";
+
+        // 話題を追加
+        const themeWrap = document.createElement("div");
+        themeWrap.className = "theme_wrap";
+
+        const titleElement = document.createElement("p");
+        titleElement.className = "title";
+        titleElement.textContent = "話題："; // XSS対策
+
+        const themeText = document.createElement("div");
+        themeText.className = "theme_text";
+
+        const topicElement = document.createElement("p");
+        topicElement.className = "theme";
+        topicElement.textContent = topic; // XSS対策
+
+        themeText.appendChild(topicElement);
+        themeWrap.appendChild(titleElement);
+        themeWrap.appendChild(themeText);
+
+        memoWrap.appendChild(themeWrap);
+
+        // 話した内容を追加
+        const memoElement = document.createElement("p");
+        memoElement.className = "memo";
+        memoElement.textContent = talk["Text"]; // XSS対策
+
+        memoWrap.appendChild(memoElement);
+
+        // talkListにtimeWrapとmemoWrapを追加
+        talkList.appendChild(timeWrap);
+        talkList.appendChild(memoWrap);
+
+        // talk_wrapに追加
+        document.getElementById("talk_wrap").appendChild(talkList);
+
     });
 }
 

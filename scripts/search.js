@@ -65,20 +65,20 @@ async function Init() {
 }
 
 window.onload = async () => {
-    await Init();   
+    await Init();
 }
 
 async function GetTalkHistory() {
     const authData = await GetSession();
 
-    const req = await fetch("/app/talks",{
+    const req = await fetch("/app/talks", {
         method: "GET",
         headers: {
             "Authorization": authData["token"],
         }
     });
 
-    const res = await req.json();   
+    const res = await req.json();
     return res["talks"];
 }
 
@@ -168,19 +168,47 @@ function searchUser() {
         results.forEach(user => {
             const userDiv = document.createElement("div");
             userDiv.className = "recent_list"; // CSSクラスを追加
-            userDiv.innerHTML = `
-                <div class="name_wrap">
-                    <p class="name">${user.name}</p>
-                    <img src="${user.icon}" alt="アイコン" class="icon">
-                </div>
-                <div class="theme_wrap">
-                    <div class="theme">
-                        <p>関係：</p>
-                        ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
-                    </div>
-                    <p class="theme">${user.topic}</p>
-                </div>
-            `;
+
+            const nameWrap = document.createElement("div");
+            nameWrap.className = "name_wrap";
+
+            const nameElement = document.createElement("p");
+            nameElement.className = "name";
+            nameElement.textContent = user.name; // textContentを使用してXSS対策
+
+            const iconElement = document.createElement("img");
+            iconElement.src = user.icon;
+            iconElement.alt = "アイコン";
+            iconElement.className = "icon";
+
+            nameWrap.appendChild(nameElement);
+            nameWrap.appendChild(iconElement);
+
+            const themeWrap = document.createElement("div");
+            themeWrap.className = "theme_wrap";
+
+            const relationElement = document.createElement("div");
+            relationElement.className = "theme";
+            const relationText = document.createElement("p");
+            relationText.textContent = "関係：";
+            relationElement.appendChild(relationText);
+
+            user.relation.forEach(rel => {
+                const relElement = document.createElement("p");
+                relElement.textContent = rel; // textContentを使用してXSS対策
+                relationElement.appendChild(relElement);
+            });
+
+            const topicElement = document.createElement("p");
+            topicElement.className = "theme";
+            topicElement.textContent = user.topic; // textContentを使用してXSS対策
+
+            themeWrap.appendChild(relationElement);
+            themeWrap.appendChild(topicElement);
+
+            userDiv.appendChild(nameWrap);
+            userDiv.appendChild(themeWrap);
+
             recentDiv.appendChild(userDiv); // 最近話した人リストに追加
         });
     } else {
@@ -207,19 +235,49 @@ function submitRelations() {
         results.forEach(user => {
             const userDiv = document.createElement("div");
             userDiv.className = "recent_list"; // CSSクラスを追加
-            userDiv.innerHTML = `
-                <div class="name_wrap">
-                    <p class="name">${user.name}</p>
-                    <img src="${user.icon}" alt="アイコン" class="icon">
-                </div>
-                <div class="theme_wrap">
-                    <div class="theme">
-                        <p>関係：</p>
-                        ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
-                    </div>
-                    <p class="theme">${user.topic}</p>
-                </div>
-            `;
+
+            const nameWrap = document.createElement("div");
+            nameWrap.className = "name_wrap";
+
+            const nameElement = document.createElement("p");
+            nameElement.className = "name";
+            nameElement.textContent = user.name; // XSS対策
+
+            const iconElement = document.createElement("img");
+            iconElement.src = user.icon;
+            iconElement.alt = "アイコン";
+            iconElement.className = "icon";
+
+            nameWrap.appendChild(nameElement);
+            nameWrap.appendChild(iconElement);
+
+            const themeWrap = document.createElement("div");
+            themeWrap.className = "theme_wrap";
+
+            const relationElement = document.createElement("div");
+            relationElement.className = "theme";
+
+            const relationText = document.createElement("p");
+            relationText.textContent = "関係："; // XSS対策
+            relationElement.appendChild(relationText);
+
+            // relationを表示
+            user.relation.forEach(rel => {
+                const relElement = document.createElement("p");
+                relElement.textContent = rel; // XSS対策
+                relationElement.appendChild(relElement);
+            });
+
+            const topicElement = document.createElement("p");
+            topicElement.className = "theme";
+            topicElement.textContent = user.topic; // XSS対策
+
+            themeWrap.appendChild(relationElement);
+            themeWrap.appendChild(topicElement);
+
+            userDiv.appendChild(nameWrap);
+            userDiv.appendChild(themeWrap);
+
             recentDiv.appendChild(userDiv); // 最近話した人リストに追加
         });
 
@@ -242,19 +300,49 @@ function displayRecentContacts() {
     sample_json.user.forEach(user => {
         const recentDivItem = document.createElement("div");
         recentDivItem.className = "recent_list"; // CSSクラスを追加
-        recentDivItem.innerHTML = `
-            <div class="name_wrap">
-                <p class="name">${user.name}</p>
-                <img src="${user.icon}" alt="アイコン" class="icon">
-            </div>
-            <div class="theme_wrap">
-                <div class="theme">
-                    <p>関係：</p>
-                    ${user.relation.map(rel => `<p>${rel}</p>`).join('')} <!-- relationを表示 -->
-                </div>
-                <p class="theme">${user.topic}</p>
-            </div>
-        `;
+
+        const nameWrap = document.createElement("div");
+        nameWrap.className = "name_wrap";
+
+        const nameElement = document.createElement("p");
+        nameElement.className = "name";
+        nameElement.textContent = user.name; // XSS対策
+
+        const iconElement = document.createElement("img");
+        iconElement.src = user.icon;
+        iconElement.alt = "アイコン";
+        iconElement.className = "icon";
+
+        nameWrap.appendChild(nameElement);
+        nameWrap.appendChild(iconElement);
+
+        const themeWrap = document.createElement("div");
+        themeWrap.className = "theme_wrap";
+
+        const relationElement = document.createElement("div");
+        relationElement.className = "theme";
+
+        const relationText = document.createElement("p");
+        relationText.textContent = "関係："; // XSS対策
+        relationElement.appendChild(relationText);
+
+        // relationを表示
+        user.relation.forEach(rel => {
+            const relElement = document.createElement("p");
+            relElement.textContent = rel; // XSS対策
+            relationElement.appendChild(relElement);
+        });
+
+        const topicElement = document.createElement("p");
+        topicElement.className = "theme";
+        topicElement.textContent = user.topic; // XSS対策
+
+        themeWrap.appendChild(relationElement);
+        themeWrap.appendChild(topicElement);
+
+        recentDivItem.appendChild(nameWrap);
+        recentDivItem.appendChild(themeWrap);
+
         recentDiv.appendChild(recentDivItem); // 最近話した人リストに追加
 
         recentDivItem.addEventListener("click", () => {
@@ -279,9 +367,24 @@ function generateRelationCheckboxes() {
 
     relationSet.forEach(rel => {
         const label = document.createElement("label");
-        label.innerHTML = `<input type="checkbox" name="relation" value="${rel}"> ${rel}`;
+
+        // チェックボックスを作成
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "relation";
+        checkbox.value = rel; // XSS対策として、textContentを使って表示しない
+
+        // チェックボックスのラベル部分を作成
+        const labelText = document.createTextNode(rel); // XSS対策
+
+        // ラベルにチェックボックスとテキストを追加
+        label.appendChild(checkbox);
+        label.appendChild(labelText);
+
+        // フォームにラベルを追加
         relationForm.appendChild(label);
         relationForm.appendChild(document.createElement("br")); // 改行を追加
+
     });
 
     // 検索ボタンを再追加
