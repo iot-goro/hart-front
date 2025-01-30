@@ -3,44 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../css/home.css">
     <title>ホーム画面</title>
 </head>
 <body>
     <!-- <div class="container"> -->
         <header>
-            <div class="toggle_wrap">
-                <div class="toggle_switch">
-                    <p>話したい</p>
-                </div>
-                <div class="toggle_contents">
-                    <p>話したい</p>
-                    <p>話したくない</p>
-                    <p>話しかけてくれてもええんやで</p>
-                </div>
-            </div>
-            <!-- <img src="/hart-front/images/qr_code.png" class="qr" alt="IoTと接続"> -->
-            <a href="../html/QR_scan.html"><img src="../images/qr_code.png" alt="IoTと接続"></a>
+            <label id="select-box">
+                <select >
+                    <option >話したい</option>
+                    <option >話したくない</option>
+                </select>
+            </label>
+            <a href="../html/QR_scan.html" id="QR"><img src="../images/qr_code.png" alt="IoTと接続"></a>
         </header>
+        <!-- 話題を横から表示していく -->
         <main>
-            <div class="scroll-area">
+          <div class="scroll-containew">
                 <div class="scroll-content">
-                    <span class="scroll-item item1">猫</span>
-                    <span class="scroll-item item2">犬</span>
-                    <span class="scroll-item item3">パソコン</span>
-                    <span class="scroll-item item4">いくら</span>
-                    <span class="scroll-item item5">もふさんど</span>
-                    <span class="scroll-item item6">メモ帳</span>
+                    <div class="scroll-item ">猫</div>
+                    <div class="scroll-item ">犬</div>
+                    <div class="scroll-item ">パソコン</div>
+                    <div class="scroll-item ">いくら</div>
+                    <div class="scroll-item ">もふさんど</div>
+                    <div class="scroll-item ">メモ帳</div>
                     <!-- 必要に応じて追加 -->
                 </div>
             </div>
     <!-- </div> -->
         </main>
-    
+        <img src="../images/human.png" id="human">
     <!-- 仮として画面遷移ボタンの配置 -->
     <footer>
-        <img src="../images/human.png" class="img1">
+        
         <!-- 画面遷移 -->
         <div>
             <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
@@ -56,8 +51,5 @@
     </footer>
 
 </body>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script src="/hart-front/scripts/home.js"></script>
-<!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
-
+<script src="../scripts/scroll_word.js"></script>
 </html>
