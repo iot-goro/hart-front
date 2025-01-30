@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../css/home.css">
     <title>ホーム画面</title>
 </head>
 
@@ -12,12 +12,12 @@
     <!-- <div class="container"> -->
         <header>
             <label id="select-box">
-                <select >
-                    <option >話したい</option>
-                    <option >話したくない</option>
+                <select id="select_state">
+                    <option value="want_talk">話したい</option>
+                    <option value="dont_talk">話したくない</option>
                 </select>
             </label>
-            <a href="../html/QR_scan.html" id="QR"><img src="../images/qr_code.png" alt="IoTと接続"></a>
+            <a href="../html/QR_scan_IoT.html" id="QR"><img src="../images/qr_code.png" alt="IoTと接続"></a>
         </header>
         <!-- 話題を横から表示していく -->
         <main>
@@ -63,6 +63,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../scripts/home.js"></script>
+
+    <script src="../scripts/scroll_word.js"></script>
 </body>
-<script src="../scripts/scroll_word.js"></script>
 </html>

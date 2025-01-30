@@ -59,9 +59,24 @@ document.querySelectorAll('.toggle_contents p').forEach((item) => {
     });
 });
 
-const iot_qr = document.getElementById("iot_qr");
-iot_qr.addEventListener("click", () => {
-    window.location.href = IotURL;
+const select_state = document.getElementById("select_state");
+select_state.addEventListener("change",async () => {
+    // トグルスイッチの状態を更新
+    const authData = await GetSession();
+
+    const req = await fetch("/app/userStatus/", {
+        method: "POST",
+        headers: {
+            "Authorization": authData["token"],
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "profile": select_state.value
+        })
+    });
+
+    const result = await req.json();
+    console.log(result);
 })
 
 async function Init() {
@@ -92,12 +107,13 @@ async function Init() {
             });
 
             const result = await req.json();
+            select_state.value = result["status"]["Status"] ? result["status"]["Status"] : "want_talk";
 
             // トグルスイッチの状態を更新
-            const toggleSwitch = document.querySelector('.toggle_wrap').querySelector('.toggle_switch p');
+            // const toggleSwitch = document.querySelector('.toggle_wrap').querySelector('.toggle_switch p');
         
             // トグルスイッチの状態を更新
-            toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent; // トグルスイッチに反映
+            // toggleSwitch.textContent = document.getElementById(result["status"]["Status"]).textContent; // トグルスイッチに反映
         } catch (error) {
             console.error(error);
         }
