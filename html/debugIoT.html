@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+</head>
+
+<body>
+    <div id="showqr"></div>
+    <p id="output"></p>
+    
+    <script src="../scripts/qrcode.min.js"></script>
+    <script>
+        // uuid を生成する
+        let wsid = crypto.randomUUID();
+
+        // uuid が保存されていない場合
+        if (!localStorage.getItem('wsid')) {
+            localStorage.setItem('wsid', wsid);
+        }
+
+        // uuid を取得する
+        wsid = localStorage.getItem('wsid');
+
+        var qrcode = new QRCode("showqr", {
+            text: wsid,
+            width: 500,
+            height: 500,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
+        setInterval(async () => {
+            const req = await fetch("/app/StatusFromIot",{
+                method:"GET",
+                headers : {
+                    "iotId" : wsid,
+                }
+            });
+
+            const result = await req.json();
+            console.log(result);
+
+            document.getElementById("output").textContent = `${result["status"]} : ${result["topic"]}`;
+        }, 3000);
+    </script>
+
+    
+
+</body>
+
+</html>

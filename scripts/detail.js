@@ -40,7 +40,7 @@ function vr_function() {
     // window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     var recognition = new SpeechRecognition();
-    recognition.lang = 'ja';
+    // recognition.lang = 'ja';
     recognition.interimResults = true;
     recognition.continuous = true;
 
