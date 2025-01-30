@@ -1,5 +1,123 @@
-/* 画面遷移要素 */
+body {
+  margin: 0;
+  font-family: "Josefin Sans", serif;
+  background: url(../images/home_bg.png);
+  background-repeat: no-repeat;
+  /* 背景画像のサイズ */
+  background-size: 100% 100vh;
+  color: #163020;
+}
 
+header {
+  margin: 20px;
+  /* 上下中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 文字デザイン */
+  font-weight: bold;
+  color: #163020;
+  font-size: 24px;
+  position: relative;
+  gap: 15px;
+}
+
+/* 話したくないなどの選択 */
+#select-box {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+#select-box::after {
+  position: absolute;
+  right: 15px;
+  width: 10px;
+  height: 7px;
+  background-color: #163020;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: '';
+  pointer-events: none;
+}
+
+#select-box select {
+  appearance: none;
+  min-width: 160px;
+  height: 2.8em;
+  padding: .4em calc(.8em + 30px) .4em .8em;
+  border: none;
+  border-bottom: 2px solid #598A6A;
+  background-color: #fff;
+  color: #163020;
+  font-family: "Josefin Sans", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#QR img {
+  width: 80px;
+  height: auto;
+}
+
+
+
+main {
+  height: 600px;
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  box-sizing: border-box;
+  align-items: center;
+  /* コンテンツを垂直方向に中央揃え */
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 10s linear infinite;
+  gap: 20px;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+
+  /* 文字間の余白を調整 */
+  font-size: 30px;
+  /* 文字サイズを大きくする */
+  line-height: 60px;
+  /* 文字を垂直方向に中央揃え */
+  font-weight: bold;
+  /* 文字を太くする */
+  white-space: nowrap;
+  /* 文字が折り返されないようにする */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#human {
+  bottom: 150px;
+  right: 155px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  margin-top: 50px;
+}
+
+/* 画面遷移要素 */
 footer {
   margin: 20px;
   /* 上下中央に配置 */
@@ -31,6 +149,7 @@ footer div {
   justify-content: center;
   align-items: center;
   background-color: #598A6A;
+  border: #598A6A;
   gap: 0px;
 }
 
