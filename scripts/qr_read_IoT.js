@@ -65,7 +65,7 @@ window.onload = (e) => {
         window.localStorage.removeItem("talk_memo");
 
         // リダイレクト
-        window.location.href = TalkingURL;
+        window.location.href = HomeURL;
     };
 
     // 再読み込みボタンの処理

@@ -128,8 +128,8 @@ async function Init() {
         // alert(error);
 
         // body に表示する
-        const body = document.querySelector("body");
-        body.textContent = error;
+        // const body = document.querySelector("body");
+        // body.textContent = error;
 
         // ログインに飛ばす
         // window.location.href = LoginURL;
