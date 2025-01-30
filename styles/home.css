@@ -1,199 +1,40 @@
-@media screen and (max-width: 844px) {
-
-body {
-    /* display: block; */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-image: url('/hart-front/images/home_backgraund.jpg');
-    background-size: 100% 100vh;
-    background-size: cover; /*画像を画面全体に拡大*/
-    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
-    position: relative;
+.scroll-content{
+    margin     : auto;
+    width      : 96%;
+    font-size  : 140%;
+    line-height: 1.5em;
+    text-align : center;
+    border     : 1px solid #666;
+    color      : #000000;
+    background : #fff;
+    overflow   : hidden;
 }
 
-.container {
-
-    flex-direction: column;
-    height: 100vh;
+scroll-item item1{
+    display     : inline-block;
+    padding-left: 100%;
+    white-space : nowrap;
+    line-height : 1em;
+    animation   : scrollAnime 3s linear infinite;
 }
 
-header {
-    display: flex;
-    text-align: center;
-    padding: 10px;
-    /* float: left; */
+@keyframes scrollAnime{
+    0% { transform: translateX(0)}
+    100% { transform: translateX(-100%)}
 }
 
-.qr{
-    margin-top: 30px;
-    display: flex;
-    width: 80px;
-    height: 80px;
-
+img1{
+    bottom: 90px;
+    right: -20px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        margin: 30px 170px;
+        position: absolute;
+        margin-top: 50px;
 }
 
-
-/* ドロワー(カテゴリー選択) */
-/* ドロワー全体 */
-.toggle_wrap {
-    position: relative;
-    width: 200px; /* 必要に応じて幅を調整 */
-    margin: 20px auto; /* 中央に配置 */
-}
-
-.toggle_wrap:last-of-type {
-    padding-top: 20px;
-}
-
-
-/* トグルスイッチ */
-.toggle_switch {
-    cursor: pointer;
-    background-color: #598A6A;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.toggle_switch.open {
-    background-color: #457857;
-}
-
-/* ドロワーメニュー */
-.toggle_contents {
-    position: absolute;
-    top: 100%; /* トグルスイッチの下に表示 */
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 10;
-}
-
-.toggle_contents p {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: #333;
-}
-
-.toggle_contents p:hover {
-    background-color: #f0f0f0;
-}
-
-
-
-.scroll-area {
-flex: 1;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgba(255, 255, 255, 0); /* 0.5 が透過率 */
-overflow: hidden;
-position: relative;
-}
-
-.scroll-content {
-position: relative;
-width: 100%;
-height: 100%;
-overflow: hidden;
-}
-
-.scroll-item {
-position: absolute;
-font-size: 24px;
-color: black;
-white-space: nowrap;
-}
-
-/* 個別アニメーション設定 */
-.item1 {
-animation: scroll-left 6s linear infinite;
-top: 10%;
-left: 100%;
-}
-
-.item2 {
-animation: scroll-left 8s linear infinite;
-top: 30%;
-left: 100%;
-}
-
-.item3 {
-animation: scroll-left 10s linear infinite;
-top: 50%;
-left: 100%;
-}
-
-.item4 {
-animation: scroll-left 7s linear infinite;
-top: 70%;
-left: 100%;
-}
-
-.item5 {
-animation: scroll-left 9s linear infinite;
-top: 20%;
-left: 100%;
-}
-
-.item6 {
-animation: scroll-left 11s linear infinite;
-top: 80%;
-left: 100%;
-}
-
-/* アニメーション効果 */
-@keyframes scroll-left {
-0% {
-    transform: translateX(0);
-}
-100% {
-    transform: translateX(-400%);
-}
-}
-
-.shape01{
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    background-color: #F6F0E4;
-}
-
-.shape01{
-    border-top-left-radius: 100px;
-}
-
-.shape02{
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    background-color: #AFC8AD;
-}
-
-.shape02{
-    border-bottom-right-radius: 100px;
-}
-
-.img1{
-bottom: 90px;
-right: -20px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    margin: 30px 170px;
-    position: absolute;
-    /* margin-top: 50px; */
-}
-
-
+/* 画面遷移要素 */
 footer {
     margin: 20px;
     /* 上下中央に配置 */
@@ -213,7 +54,7 @@ footer div {
     align-items: center;
     gap: 25px;
 }
-/* ボタン */
+  /* ボタン */
 .transition {
     /* サイズを円状にする */
     width: 75px;
@@ -224,13 +65,12 @@ footer div {
     justify-content: center;
     align-items: center;
     background-color: #598A6A;
-    border: #598A6A;
     gap: 0px;
 }
-/* 画面遷移ボタンのアイコン */
+  /* 画面遷移ボタンのアイコン */
 .transition img {
-width: 45px;
-height: 50px;
+    width: 45px;
+    height: 50px;
 }
 
   /* 画面遷移ボタンのテキスト */
@@ -243,7 +83,6 @@ height: 50px;
     text-decoration: none;
     display: inline-block;
 }
-
   /* トーク開始ボタン */
 #match{
     width: 110px;
@@ -265,8 +104,4 @@ height: 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-}
-
-
-
 }

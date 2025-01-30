@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/hart-front/styles/home.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <title>ホーム画面</title>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container"> -->
         <header>
             <div class="toggle_wrap">
                 <div class="toggle_switch">
@@ -19,32 +19,31 @@
                     <p>話しかけてくれてもええんやで</p>
                 </div>
             </div>
-            <img src="/hart-front/images/qr_code.png" class="qr" alt="IoTと接続">
+            <!-- <img src="/hart-front/images/qr_code.png" class="qr" alt="IoTと接続"> -->
+            <a href="../html/QR_scan.html"><img src="../images/qr_code.png" alt="IoTと接続"></a>
         </header>
-        <div class="scroll-area">
-            <div class="scroll-content">
-                <span class="scroll-item item1">猫</span>
-                <span class="scroll-item item2">犬</span>
-                <span class="scroll-item item3">パソコン</span>
-                <span class="scroll-item item4">いくら</span>
-                <span class="scroll-item item5">もふさんど</span>
-                <span class="scroll-item item6">メモ帳</span>
-                <!-- 必要に応じて追加 -->
+        <main>
+            <div class="scroll-area">
+                <div class="scroll-content">
+                    <span class="scroll-item item1">猫</span>
+                    <span class="scroll-item item2">犬</span>
+                    <span class="scroll-item item3">パソコン</span>
+                    <span class="scroll-item item4">いくら</span>
+                    <span class="scroll-item item5">もふさんど</span>
+                    <span class="scroll-item item6">メモ帳</span>
+                    <!-- 必要に応じて追加 -->
+                </div>
             </div>
-        </div>
-
-        
-
-    </div>
-    <img src="/hart-front/images/human.png" class="img1">
+    <!-- </div> -->
+        </main>
+    
     <!-- 仮として画面遷移ボタンの配置 -->
     <footer>
-       
+        <img src="../images/human.png" class="img1">
         <!-- 画面遷移 -->
         <div>
             <button class="transition" onclick="location.href='./search.html'"><img src="../images/note_icon.png" alt="トーク履歴に飛ぶアイコン">
-            <div>
-                history</div>
+            <div>history</div>
             </button>
             <button class="transition" id="match" onclick="location.href='./qr_code.html'"> <img src="../images/talk_icon.png" alt="会話を始めるアイコン">
             <div>talk</div>
@@ -56,7 +55,8 @@
     </footer>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script src="/hart-front/scripts/home.js"></script>
+<!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
 
 </html>
