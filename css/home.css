@@ -1,3 +1,12 @@
+html{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+
 body {
   margin: 0;
   font-family: "Josefin Sans", serif;
@@ -6,6 +15,8 @@ body {
   /* 背景画像のサイズ */
   background-size: 100% 100vh;
   color: #163020;
+  overflow: hidden;
+  width: 100vw;
 }
 
 header {
@@ -70,7 +81,7 @@ main {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
   white-space: nowrap;
   box-sizing: border-box;
   align-items: center;
@@ -82,11 +93,14 @@ main {
   flex-direction: column;
   animation: scroll 10s linear infinite;
   gap: 20px;
+  animation-fill-mode: forwards;
+  
+  
 }
 
 .scroll-item {
   flex: 0 0 auto;
-
+  min-width: 100vw;
   /* 文字間の余白を調整 */
   font-size: 30px;
   /* 文字サイズを大きくする */
@@ -100,7 +114,7 @@ main {
 
 @keyframes scroll {
   0% {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 
   100% {
